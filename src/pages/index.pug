@@ -1,0 +1,36 @@
+extends _layout.pug
+
+block var
+	- var title = 'Trang chu'
+	- var bodyClass = 'homepage'
+
+block main
+	#fake-header
+		.close-button
+			em.ri-close-fill
+			span CLOSE
+		ul.menu-fake-header
+		.menu-fake-bottom
+			a.btn.btn-signup(href="")
+				img(src="./img/icons/mail.png", alt="")
+				|Đăng ký nhận tư vấn
+			ul.socail
+				li
+					a(href="")
+						em.ri-facebook-fill
+				li
+					a(href="")
+						em.ri-youtube-fill
+				li
+					a(href="")
+						em.ri-instagram-line
+	#fake-header-open
+		.open-button
+			span Menu
+	.full-page
+		include ../components/home/home-1.pug
+		include ../components/home/home-2.pug
+		include ../components/home/home-3.pug
+		include ../components/home/home-4.pug
+		include ../components/home/home-5.pug
+		include ../components/home/home-6.pug

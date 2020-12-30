@@ -1,0 +1,43 @@
+.main-title
+	position: relative
+	font-size: 40/16*1rem
+	font-weight: 400
+	padding-bottom: 5px
+	&.center
+		text-align: center
+		&::after
+			left: 50%
+			transform: translateX(-50%)
+	&.text-white
+		color: #ffffff
+		&::after
+			background-color: $white
+	&.color-title
+		color: $title
+
+	&::after
+		position: absolute
+		left: 0
+		top: 100%
+		width: 50px
+		height: 1px
+		background-color: #0a293b
+		content: ''
+	@media(max-width: 1366px)
+		font-size: 26/16*1rem
+.time
+	position: absolute
+	background-color: $main
+	opacity: 0.9
+	width: 96px
+	height: 24px
+	padding: 0 7px
+	transform: translate(0) rotate(-90deg)
+	color: #111111
+	font-size: 13px
+	font-weight: 400
+	text-align: center
+	display: flex
+	align-items: center
+	justify-content: center
+	letter-spacing: 1.3px
