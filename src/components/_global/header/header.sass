@@ -1,528 +1,280 @@
-header
-	background-color: $main
-	color: #ffffff
-	padding-top: 15px
-	padding-bottom: 24px
+.kv-header
 	position: fixed
-	z-index: 9999
 	width: 100%
-	left: 0
-	right: 0
-	top: 0
-	height: 113px
-	max-width: $layout
-	margin-left: auto
-	margin-right: auto
-	transition: 0.5s all  ease-in-out
-	transform: translateY(0)
-	&.scroll-menu
-		transform: translateY(-100%)
-		transition: 0.8s all  ease-in-out
-	@media(max-width: 768px)
-		padding: 10px 0
-		height: 70px
-	.main-wrap
-		display: flex
-		align-items: center
-		justify-content: space-between
-	.left-wrap
-		min-width: 90px
-		padding-left: 8px
-		@media(max-width: 768px)
-			padding-left: 0
-			min-width: 60px
+	background-color: $white
+	z-index: 999
+	.navbar
+		position: relative
+		width: 100%
+		padding-top: 29px
+		padding-bottom: 27px
+		.navbar-brand
+			width: 220px
+			height: 75px
 			img
-				max-height: 50px
-	.menu-list
-		display: flex
-		align-items: center
-	.mega-list
-		display: flex
-		align-items: center
-		li
-			&.active
-				a
-					color: $main
-	.main-language
-		padding-right: 20px
-		position: relative
-		&::before
-			content: ''
-			position: absolute
-			top: 50%
-			transform: translateY(-50%)
-			right: 0
-			background: #ffffff
-			width: 1px
-			height: 10px
-		@media(max-width: 768px)
-			&::before
-				display: none
-	.language
-		font-size: 12px
-		font-weight: 400
-		color: #ffffff
-		a
-			&:hover
-				color: #ffffff
-				+hover-underline(95%, #ffffff)
-		.dropdown-menu
-			a
-				color: $main
-				&:hover
-					color: $main
-					+hover-underline(95%, $main)
-	.right-wrap
-		.top-wrap
-			display: flex
-			justify-content: flex-end
-			align-items: center
-			// .main-search
-			// 	@media(max-width: 576px)
-			// 		display: none
-	.main-menu-top
-		margin-right: 10px
-		.menu-list
-			font-size: 12px
-			font-weight: 400
-			color: #ffffff
-			li
-				position: relative
-				padding-right: 20px
-				padding-left: 20px
-				&::before
-					content: ''
-					position: absolute
-					top: 50%
-					transform: translateY(-50%)
-					right: 0
-					background: #ffffff
-					width: 1px
-					height: 10px
-				&:last-child
-					&::before
-						display: none
-		@media(max-width: 768px)
-			display: none
-	.bottom-wrap
-		margin-top: 20px
-		.menu-list
-			// position: relative
-			> li
-				margin: 0 25px
-				&:first-child
-					margin-left: 0
-				&:last-child
-					margin-right: 0
-				> a
-					font-size: 18.62px
-					font-weight: 400
-					color: $pink
-					transition: .2s ease-in-out all
-					text-transform: uppercase
-					position: relative
-					text-align: center
-					&::before
-						content: ''
-						position: absolute
-						top: 41px
-						left: 50%
-						transform: translateX(-50%) rotate(45deg)
-						background: #ffffff
-						width: 15px
-						height: 15px
-						display: flex
-						justify-content: center
-						align-items: center
-						transition: .2s ease-in-out all
-						opacity: 0
-						pointer-events: none
-					&:hover
-						color: #ffffff
-						text-shadow: 0.5px 0 0 #ffffff
-				&.active
-					> a
-						color: #ffffff
-						text-shadow: 0.5px 0 0 #ffffff
-				&.has-mega-menu
-					.mega-menu
-						position: absolute
-						// top: 100%
-						top: 85px
-						left: 0
-						z-index: 11
-						width: 100%
-						color: $gray
-						// padding-top: 21px
-						padding-top: 28px
-						opacity: 0
-						transition: .2s ease-in-out all
-						pointer-events: none
-						.mega-list
-							display: flex
-							// justify-content: space-between
-							justify-content: center
-							background: #ffffff
-							padding: 13.5px 0
-							// position: relative
-							// overflow: hidden
-							// &::before
-							// 	content: ''
-							// 	position: fixed
-							// 	top: 113px
-							// 	transform: translateX(-50%)
-							// 	left: 50%
-							// 	background: #ffffff
-							// 	width: 100vw
-							// 	height: 57px
-							// 	pointer-events: none
-							// 	z-index: -1
-							li
-								margin: 0 2.2%
-								text-align: center
-								a
-									font-size: 14px
-									color: $gray
-									transition: .2s ease-in-out all
-									font-weight: 400
-									text-transform: uppercase
-									text-align: center
-									&:hover
-										color: $main
-								&.active
-									a
-										color: $main
-								&.has-mega-child
-									.mega-menu
-										top: auto
-										bottom: -57px
-										padding-top: 20px
-										.mega-list
-											background: #e7eeec
-											li
-												&.active
-													a
-														color: $main
-									&:hover
-										> a
-											color: $main
-											&::before
-												opacity: 0
-										> .mega-menu
-											opacity: 1
-											pointer-events: auto
-					.arrow-down-mobile
-						display: none
-					&:hover
-						> a
-							color: #ffffff
-							text-shadow: 0.5px 0 0 #ffffff
-							&::before
-								opacity: 1
-						> .mega-menu
-							opacity: 1
-							pointer-events: auto
-
-			@media(max-width: 1024px)
-				> li
-					margin: 0 10px
-					>
-						a
-							font-size: 16px
-			@media(max-width: 768px)
-				> li
-					&.has-mega-menu
-						.arrow-down-mobile
-							display: block
-			// 	> li
-			// 		margin: 0 15px
-			// 		> a
-			// 			font-size: 16px
-		@media(max-width: 768px)
-			display: none
-	.searchbox
-		display: flex
-		justify-content: center
-		align-items: center
-		position: relative
-		max-width: 225px
-		margin-left: auto
-		margin-right: auto
-		input
-			border: 1px solid #ffffff
-			height: 27px
-			width: 225px
-			padding: 3px 15px
-			padding-right: 30px
-			font-size: 12px
-			font-weight: 400
-			color: $gray
-			border-radius: 5px
-			&::placeholder
-				font-size: 12px
-				font-weight: 300
-				color: $gray
-				font-style: italic
-		button
-			position: absolute
-			top: 50%
-			transform: translateY(-50%)
-			z-index: 11
-			right: 0
-			width: 27px
-			height: 27px
-			display: flex
-			justify-content: center
-			align-items: center
-			transition: .2s ease-in-out all
-			border: none
-			background: none
-			padding: 0
-			border-radius: 5px
-			em
-				font-size: 12px
-				color: $gray
-				transition: .2s ease-in-out all
-				line-height: 1
-			&:hover
-				em
-					color: $main
-		@media(max-width: 768px)
-			max-width: 187px
-.button-hambuger
-	display: none
-	@media(max-width: 768px)
-		display: block
-		position: relative
-		width: 26px
-		height: 26px
-		margin-left: 40px
-		+dc
-		.burger-bt-inner
-			width: 26px
-			height: 20px
-			position: absolute
-			cursor: pointer
-			span
-				content: ""
-				display: block
 				width: 100%
-				height: 2px
-				background-color: #ffffff
-				position: absolute
-				top: 50%
-				margin-top: -1px
-				transition: opacity .2s cubic-bezier(.165,.84,.44,1)
-				opacity: 1
-			&:before, &:after
-				content: ""
-				display: block
-				width: 100%
-				height: 2px
-				background-color: #ffffff
-				position: absolute
-				-webkit-transition: -webkit-transform .5s cubic-bezier(.165,.84,.44,1)
-				transition: -webkit-transform .5s cubic-bezier(.165,.84,.44,1)
-				transition: transform .5s cubic-bezier(.165,.84,.44,1)
-				transition: transform .5s cubic-bezier(.165,.84,.44,1),-webkit-transform .5s cubic-bezier(.165,.84,.44,1)
-			&:before
-				top: 0
-			&:after
-				bottom: 0
-			&.active
-				// &:before, &:after
-				// 	background-color: $main
-				span
-					// background-color: $main
-					opacity: 0
-				&:before
-					transform: translateY(9px) rotate(45deg)
-				&:after
-					transform: translateY(-9px) rotate(-45deg)
-.backdrop
-	position: fixed
-	width: 100%
-	height: 100%
-	opacity: 0
-	pointer-events: none
-	transition: .5s ease-in-out
-	background: rgba(0,0,0,.8)
-	top: 0
-	left: 0
-	z-index: 500
-	&.active
-		opacity: 1
-		pointer-events: auto
-.mobile-wrap
-	display: none
-	@media(max-width: 768px)
-		position: fixed
-		top: 70px
-		right: 0
-		bottom: 0
-		background-color: rgba($main, 1)
-		width: 100vw
-		height: calc( 100vh - 70px )
-		display: block
-		transform: translateX(100vw)
-		transition: transform .8s cubic-bezier(.165,.84,.44,1),-webkit-transform .8s cubic-bezier(.165,.84,.44,1)
-		z-index: 500
-		// padding: 15px 0
-		pointer-events: none
-		z-index: 9998
-		border-top: 1px solid #fff
-		max-height: calc( 100vh - 70px )
-		overflow-y: auto
-		overflow-x: hidden
-		&::before
-			content: ''
-			position: absolute
-			top: 0
-			left: 0
-			background: $gray
-			width: 1px
-			height: 100%
-			pointer-events: none
-		&.active
-			opacity: 1
-			pointer-events: auto
-			transform: translateX(0)
-		.language-social
-			display: flex
-			align-items: center
-			justify-content: space-between
-			padding-top: 17px
-			padding-bottom: 34px
-			padding-left: 20px
-			padding-right: 20px
-			.language
-				display: flex
-				align-items: center
-				flex-direction: row-reverse
-				> a
-					font-size: 20px
-					color: $pink
-					margin-left: 28px
-				.dropdown-menu
-					position: relative
-					opacity: 1
-					top: auto
-					pointer-events: auto
-					left: auto
-					padding: 0
-					background: none
-					border: none
-					padding-right: 28px
-					position: relative
-					&::before
-						content: ''
-						position: absolute
-						top: 50%
-						transform: translateY(-50%)
-						right: 0
-						background: $pink
-						width: 1px
-						height: 17px
-					ul
-						li
-						+ li
-							margin-left: 0
-							a
-								font-size: 20px
-								color: #ffffff
-								font-weight: 700
-								width: auto
-								height: auto
-								border-radius: 0
-								background: none
-			ul.type-none
-				display: flex
-				align-items: center
-				li
-					display: flex
-					justify-content: center
-					align-items: center
-					+ li
-						margin-left: 25px
+				height: 100%
+			@media screen and ( max-width: 1199.98px)
+				width: 150px
+				height: auto
+			@media screen and ( max-width: 575.98px)
+				width: 100px
+		.navbar-right
+			.header-icons
+				margin-right: 30px
+				.language
 					a
+						&:first-child
+							padding-right: 15px
+							border-right: solid 2px #767676
+						&:last-child
+							padding-left: 15px
+				.btn-search
+					margin-left: 30px
+					cursor: pointer
+					.ri-search-line
+						font-size: 22px
+						color: #767676
+		.main-nav
+			position: absolute
+			width: 100vw
+			height: 100vh
+			background-color: $main
+			top: 0
+			left: 100%
+			z-index: 1000
+			padding-top: 80px
+			visibility: hidden
+			opacity: 0
+			.logo-main-menu
+				width: 220px
+				height: 75px
+				margin-bottom: 80px
+				img
+					filter: brightness(0) invert(1)
+			.close
+				cursor: pointer
+				position: absolute
+				top: 20px
+				right: 30px
+			&.active
+				left: 0
+				visibility: visible
+				opacity: 1
+				@media screen and ( max-width: 575.98px)
+					.col-lg-3
+						opacity: 1
+						transform: translateX(0)
+						&:nth-child(1)
+							transition-delay: .1s
+						&:nth-child(2)
+							transition-delay: .2s
+						&:nth-child(3)
+							transition-delay: .3s
+						&:nth-child(4)
+							transition-delay: .4s
+						&:nth-child(5)
+							transition-delay: .5s
+						&:nth-child(6)
+							transition-delay: .6s
+						&:nth-child(7)
+							transition-delay: .7s
+						&:nth-child(8)
+							transition-delay: .8s
+						&:nth-child(9)
+							transition-delay: .9s
+			.col-lg-3
+				&:nth-child(5),
+				&:nth-child(6),
+				&:nth-child(7)
+					margin-top: 100px
+			.item
+				ul
+					padding-top: 57px
+					padding-left: 0
+					list-style: none
+					.nav-item
+						line-height: 42px
+						.nav-link
+							position: relative
+							&::after
+								position: absolute
+								background-color: rgb(245, 245, 245)
+								opacity: 0.502
+								left: 50%
+								top: 100%
+								transform: translateX(-50%)
+								width: 0
+								height: 1px
+								content: ''
+								transition: all .5s cubic-bezier(.22, .44, 0, 1)
+						&:hover
+							.nav-link
+								&::after
+									width: 100%
+			.menu-icons
+				padding-top: 100px
+				ul
+					list-style: none
+					padding-left: 0
+					li
+						margin-right: 30px
+			@media screen and ( max-width: 1599.98px)
+				padding-top: 50px
+				.logo-main-menu
+					width: 180px
+					margin-bottom: 30px
+				.item
+					ul
+						padding-top: 30px
+				.col-lg-3
+					&:nth-child(5),
+					&:nth-child(6),
+					&:nth-child(7)
+						margin-top: 30px
+				.menu-icons
+					padding-top: 50px
+			@media screen and ( min-width: 576px)
+				.item
+					.nav-title
+						.ri-arrow-drop-down-line
+							display: none
+			@media screen and ( max-width: 1366.98px)
+				padding-top: 40px
+				.logo-main-menu
+					margin-bottom: 40px
+				.item
+					ul
+						padding-top: 20px
+				.col-lg-3
+					&:nth-child(5),
+					&:nth-child(6),
+					&:nth-child(7)
+						margin-top: 30px
+				.menu-icons
+					padding-top: 30px
+			@media screen and ( max-width: 1280.98px)
+				.logo-main-menu
+					width: 170px
+					height: auto
+				.item
+					.nav-title
+						font-size: 20/16*1rem
+					ul
+						padding-top: 15px
+						.nav-item
+							.nav-link
+								font-size: 1rem
+			@media screen and ( max-width: 991.98px)
+				.item
+					ul
+						padding-top: 10px
+						margin-bottom: 30px
+						.nav-item
+							line-height: 30px
+			@media screen and ( max-width: 575.98px)
+				overflow-y: auto
+				padding: 30px 0
+				.logo-main-menu
+					width: 100px
+				.col-lg-3
+					transform: translateX(100%)
+					opacity: 1
+					transition: 2s all cubic-bezier(0.22, 0.44, 0, 1)
+				.item
+					margin-bottom: 20px
+					.nav-title
 						display: flex
-						justify-content: center
 						align-items: center
-						width: 35px
-						height: 35px
-						border-radius: 50%
-						background: #ffffff
-						transition: .2s ease-in-out all
-						color: $main
-		.menu-list
-			display: flex
-			flex-wrap: wrap
-			> li
-				width: 100%
-				justify-content: flex-start
-				padding-top: 15px
-				padding-bottom: 15px
-				padding-left: 20px
-				padding-right: 20px
-				border-top: 1px solid rgba($pink, 0.4)
-				> a
-					font-size: 30px
-					font-weight: 400
-					color: $pink
-					text-transform: uppercase
-					text-align: center
-					display: flex
-					justify-content: flex-start
-					align-items: center
-				&.active
-					> a
-						color: #ffffff
-						font-weight: 700
-				&.has-mega-menu
-					position: relative
-					.mega-menu
+						.ri-arrow-drop-down-line
+							margin-left: 20px
+							transform: rotate(0deg)
+							transition: .5s all cubic-bezier(0.22, 0.44, 0, 1)
+							&.active
+								transform: rotate(180deg)
+					ul
 						display: none
-						> .mega-list
-							display: flex
-							flex-wrap: wrap
-							padding-left: 20px
-							padding-top: 10px
-							padding-bottom: 10px
-							> li
-								width: 100%
-								+ li
-									margin-top: 15px
-								a
-									font-size: 21px
-									font-weight: 400
-									text-transform: uppercase
-									display: flex
-									justify-content: flex-start
-									align-items: center
-									text-align: center
-									color: #920a0f
-									font-weight: 400
-								&.active
-									a
-										color: #ffffff
-								&.has-mega-child
-									position: relative
-									.arrow-down-mobile
-										top: 1px
-					.arrow-down-mobile
-						position: absolute
-						top: 25px
-						right: 20px
-						z-index: 11
-						display: flex
-						justify-content: center
-						align-items: center
-						transition: .2s ease-in-out all
-						width: 24px
-						height: 24px
-						&:before
-							line-height: 1
-						&.active
-							transform: rotate(180deg)
-		.searchbox
-			margin-top: 15px
+				.col-lg-3
+					&:nth-child(5),
+					&:nth-child(6),
+					&:nth-child(7)
+						margin-top: 0
+	.search-wrapper
+		position: absolute
+		top: 0
+		left: 100%
+		visibility: hidden
+		opacity: 0
+		width: 100vw
+		height: 100vh
+		background-color: $main
+		.close
+			cursor: pointer
+			position: absolute
+			top: 20px
+			right: 20px
+		.form-group
+			width: 100%
+			height: 100vh
+			position: relative
+			input
+				width: 90%
+				height: 50px
+				border: none
+				padding-left: 15px
+				font-size: 26px
+				color: #333333
+
+			button
+				width: 10%
+				height: 50px
+				border: none
+				background-color: $red
+				.ri-search-line
+					color: #ffffff
+					font-size: 26px
+					font-weight: 900
+		&.active
+			left: 0
+			visibility: visible
+			opacity: 1
+	@media screen and ( max-width: 1599.98px)
+		.navbar
+			padding: 15px 0
+			.navbar-brand
+				width: 180px
+				height: auto
+	@media screen and ( max-width: 1366.98px)
+		.navbar
+			padding: 15px 0
+			.navbar-brand
+				width: 140px
+				height: auto
+	@media screen and ( max-width: 575.98px)
+		.navbar
+			.navbar-right
+				.header-icons
+					margin-right: 15px
+					.language
+						a
+							font-size: 1rem
+							&:first-child
+								padding-right: 7px
+							&:last-child
+								padding-left: 7px
+					.btn-search
+						margin-left: 15px
+	@media screen and ( max-width: 375.98px)
+		.navbar
+			.navbar-right
+				.kv-toggle
+					background: none
+					span
+						background-color: $red
+		.search-wrapper
+			.form-group
+				input
+					width: 80%
+					padding: 0 15px
+				button
+					width: 20%

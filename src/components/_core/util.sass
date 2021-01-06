@@ -18,9 +18,6 @@
 		pointer-events: visible
 .overflow-hidden
 	overflow: hidden
-.nav-link
-	padding: .5rem 0
-
 .ovh
 	width: 100%
 	height: 100%
@@ -51,32 +48,20 @@
 		padding: 0
 		list-style: none
 		display: flex
-		align-items: center
-
 		.item
 			cursor: pointer
-			margin-right: auto
-			padding: .9rem 0
-			color: $gray
 			&::after
 				background-color: #ffffff
-			&:last-child
-				margin-right: 0
 			&.active
+				background-color: $main
 				font-weight: 700
-				color: $title
+				color: $white
 				transition: all .3s ease-in-out
-				&::after
-					box-shadow: 5px -1px 15px rgba(0, 0, 0, 0.1)
-					background-color: #ffcb04
-					background-image: linear-gradient(to top, rgba(255, 255, 255, 0.5) 0%, rgba(255, 203, 4, 0.5) 100%)
 
 	.panel
 		display: none
 		&.active
 			display: block
-		@media screen and ( max-width: 991px)
-			margin-top: .9rem
 #to-top
 	transition: all 1s cubic-bezier(.22, .44, 0, 1)
 	position: fixed
@@ -133,89 +118,36 @@
 	display: flex
 	align-items: center
 	justify-content: center
-	margin-top: 10px
+	margin-top: 40px
 	cursor: pointer
+	width: 100%
 	li
 		&+li
 			margin-left: 30px
 		a, span
 			display: block
-			color: #999999
-			font-size: 18px
-			font-weight: 700
+			color: $gray
+			font-size: 1rem
+			font-weight: 500
 			letter-spacing: 0.45px
 			width: 40px
 			height: 40px
-			// border: 2px solid #999999
+			border: 1px solid #e0e0e0
 			border-radius: 0
 			display: flex
 			align-items: center
 			justify-content: center
 			transition: .3s all  ease-in-out
 			&:hover
-				background-color: #08293c
-				color: $main!important
+				background-color: $main
+				color: $white
 				transition: .4s all  ease-in-out
-				transform: translateY(-3px)
+				border: 2px solid transparent
 		&.active
 			a, span
-				background-color: #08293c
-				border: 2px solid #08293c
-				color: $main!important
-.wrap-slide
-	position: relative
-.button-next, .button-prev
-	position: absolute
-	top: 50%
-	transform: translateY(-50%)
-	width: 60px
-	height: 60px
-	border-radius: 50%
-	border: 2px solid #b5b5b5
-	opacity: .5
-	transition: all 1s cubic-bezier(.22, .44, 0, 1)
-	&:focus
-		outline: none
-	&:hover
-		opacity: 1
-		border: 2px solid #08293c
-		filter: grayscale(0)
-		&::after
-			opacity: 1
-.wrap-button
-	display: flex
-	align-items: center
-	justify-content: center
-	margin-top: 15px
-.swiper-button-next-1, .swiper-button-prev-1
-	@media screen and ( max-width: 1485px)
-		position: static
-.swiper-button-next-2
-	left: 100%
-	margin-left: 68px
-	@media screen and ( max-width: 1485px )
-		margin-left: 48px
-	&::after
-		position: absolute
-		content: url('../img/icons/arrow-next-g.png')!important
-		left: 0%
-		top: 55%
-		transform: translate(-50%,-50%)!important
-		opacity: .5
-		filter: grayscale(100%)
-.swiper-button-prev-2
-	right: 100%
-	margin-right: 68px
-	@media screen and ( max-width: 1485px )
-		margin-right: 48px
-	&::after
-		position: absolute
-		content: url('../img/icons/arrow-prev-g.png')!important
-		left: 100%
-		top: 55%
-		opacity: .5
-		filter: grayscale(100%)
-		transform: translate(-50%,-50%)!important
+				background-color: $main
+				border: 2px solid transparent
+				color: $white
 .zone-nav
 	position: relative
 	z-index: 2
@@ -354,55 +286,10 @@
 					visibility: visible
 .cmsadminpanel ul
 	list-style: none
-.single-swiper,
-.kv-swiper
-	position: relative
-	.swiper-button-next,
-	.swiper-button-prev
-		top: 50%
-		width: 60px
-		height: 60px
-		border-radius: 50%
-		border: 2px solid #ffffff
-		opacity: .5
-		transition: all 1s cubic-bezier(.22, .44, 0, 1)
-		&:focus
-			outline: none
-		&:hover
-			opacity: 1
-	.swiper-button-next
-		right: -117px
-		&::after
-			position: absolute
-			content: url('../img/icons/arrow-right-white.png')
-			left: -70%
-			top: 50%
-			transform: translateX(50%)
-			transform: translateY(-50%)
-	.swiper-button-prev
-		left: -117px
-		&::after
-			position: absolute
-			content: url('../img/icons/arrow-left-white.png')
-			right: -70%
-			top: 50%
-			transform: translateX(50%)
-			transform: translateY(-50%)
-	@media screen and ( max-width: 1199.98px)
-		.swiper-button-next
-			right: 0
-		.swiper-button-prev
-			left: 0
-	@media screen and ( max-width: 991.98px)
-		.swiper-button-next
-			right: 20px
-		.swiper-button-prev
-			left: 20px
 .opacity
 	position: relative
-	pointer-events: auto
+	pointer-events: none
 	&::after
-		opacity: 1
 		visibility: visible
 		position: absolute
 		width: 100%
@@ -414,8 +301,146 @@
 .ModuleContent
 	width: 100%
 .fancybox-slide--iframe .fancybox-content,
-.fancybox-slide--map .fancybox-content, 
-.fancybox-slide--pdf .fancybox-content, 
+.fancybox-slide--map .fancybox-content,
+.fancybox-slide--pdf .fancybox-content,
 .fancybox-slide--video .fancybox-content
 	width: 100% !important
 	height: 100% !important
+	overflow: unset !important
+.kv-toggle
+	cursor: pointer
+	position: relative
+	padding: 0
+	width: 80px
+	height: 60px
+	border-radius: 30px 0px 30px 0px
+	background-color: $red
+	transition: .3s all linear
+	span
+		display: block
+		position: absolute
+		height: 5px
+		width: 50%
+		background: $white
+		opacity: 1
+		left: 50%
+		transform: rotate(0deg) translate(-50%, -50%)
+		transition: .5s ease-in-out
+		&:nth-child(1)
+			top: 20px
+		&:nth-child(2),
+		&:nth-child(3)
+			top: 30px
+		&:nth-child(4)
+			top: 40px
+	&.active
+		span
+			&:nth-child(1)
+				top: 18px
+				width: 0%
+				left: 50%
+			&:nth-child(2)
+				-webkit-transform: rotate(45deg)
+				-moz-transform: rotate(45deg)
+				-o-transform: rotate(45deg)
+				transform: rotate(45deg)
+			&:nth-child(3)
+				-webkit-transform: rotate(-45deg)
+				-moz-transform: rotate(-45deg)
+				-o-transform: rotate(-45deg)
+				transform: rotate(-45deg)
+			&:nth-child(4)
+				top: 18px
+				width: 0%
+				left: 50%
+	@media screen and ( max-width: 575.98px)
+		width: 65px
+		height: 50px
+		span
+			&:nth-child(1)
+				top: 15px
+			&:nth-child(2),
+			&:nth-child(3)
+				top: 25px
+			&:nth-child(4)
+				top: 35px
+.swiper-button-next,
+.swiper-button-prev
+	width: 50px !important
+	height: 50px !important
+	background-color: rgba($color: #000000, $alpha: 0.502)
+	border: none
+	text-align: center
+	top: 50%
+	transform: translateY(-50%)
+	&:focus
+		outline: none !important
+.swiper-button-next
+	&::after
+		content: url('../img/icon/right.png') !important
+.swiper-button-prev
+	&::after
+		content: url('../img/icon/left.png') !important
+.catalog-box
+	width: 100%
+	line-height: 61.14px
+	cursor: pointer
+	margin-bottom: 10px
+	background-color: $main
+	.material-icons
+		color: $white
+		transform: rotate(0deg)
+		transition: all 1s cubic-bezier(.22, .44, 0, 1)
+		&.active
+			transform: rotate(180deg)
+	@media screen and ( min-width: 991.98px)
+		display: none
+.list-tabs
+	.tabs,
+	.tabs-detail
+		display: flex
+		list-style: none
+		padding-left: 0
+		.item
+			cursor: pointer
+			position: relative
+			display: flex
+			align-items: center
+			padding: 0 35px
+			span
+				position: relative
+				font-size: 18/16*1rem
+				font-weight: 300
+				color: $gray
+				line-height: 61.14px
+
+			&:first-child
+				padding-left: 0
+			+ li
+				&::before
+					content: ""
+					top: 50%
+					transform: translateY(-50%)
+					left: 0
+					position: absolute
+					background-color: #767676
+					width: 1px
+					height: 18px
+			&.active
+				background: none
+				span
+					color: $main
+					font-weight: 700
+					&::after
+						position: absolute
+						content: ''
+						width: 100%
+						height: 2px
+						background-color: $main
+						top: 100%
+						left: 0
+						z-index: 99
+	.project
+		display: none
+		&.active
+			display: block

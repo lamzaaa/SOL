@@ -18,22 +18,22 @@
 	justify-content: center
 .justify-start
 	justify-content: flex-start
+.justify-end
+	justify-content: flex-end
 .align-center
 	align-items: center
+.align-start
+	align-items: flex-start
 .text-center
 	text-align: center
 .text-right
 	text-align: right
 .flex-wrap
 	flex-wrap: wrap
-.text-white
-	color: #ffffff
 .button-prev, .button-next
 	cursor: pointer
 .line-bottom
 	border-bottom: 1px solid rgba($main, 0.28)
-.product_detail__pages
-	margin: 0 auto !important
 .dropdown
 	position: relative
 	cursor: pointer
@@ -70,7 +70,9 @@
 .color-white
 	color: $white
 .color-text
-	color: #333333
+	color: #767676
+.color-main
+	color: $main
 .f-12
 	font-size: 12/16*1rem
 .f-14
@@ -81,6 +83,10 @@
 	font-size: 18/16*1rem
 .f-20
 	font-size: 20/16*1rem
+	@media screen and ( max-width: 991.98px)
+		font-size: 18/16*1rem
+.f-22
+	font-size: 22/16*1rem
 .f-24
 	font-size: 24/16*1rem
 	@media screen and ( max-width: 1366.98px)
@@ -90,13 +96,17 @@
 .f-30
 	font-size: 30/16*1rem
 	@media screen and ( max-width: 1366.98px)
-		font-size: 21/16*1rem
+		font-size: 20/16*1rem
+	@media screen and ( max-width: 575.98px)
+		font-size: 18/16*1rem
 .f-36
 	font-size: 36/16*1rem
 .f-38
 	font-size: 38/16*1rem
 .f-40
 	font-size: 40/16*1rem
+.fw-300
+	font-weight: 300
 .fw-400
 	font-weight: 400
 .fw-500
@@ -109,22 +119,16 @@
 	font-weight: 800
 .fw-900
 	font-weight: 900
+.line-30
+	line-height: 30px
 .p-0
 	padding: 0
 .pl-0
 	padding-left: 0
 .pr-0
 	padding-right: 0
-.transition
-	transition: all 1s cubic-bezier(.22, .44, 0, 1)
-.text-white
-	color: $white
-.text-main
-	color: $title
-.text-gray
-	color: #6d6e70
-.text-black
-	color: #111111
+.m-0
+	margin: 0
 .transition
 	transition: all 1s cubic-bezier(.22, .44, 0, 1)
 .opacity
@@ -140,3 +144,5 @@
 		top: 0
 		left: 0
 		z-index: 1
+.nav-link
+	padding: .5rem 0

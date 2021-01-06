@@ -1,102 +1,120 @@
-header
-	.container
-		.main-wrap
-			.left-wrap 
-				a(href="/")
-					img(src="./img/logo.png", alt="")
-			.right-wrap 
-				.top-wrap 
-					.main-language
-						.language.dropdown
-							a(href="#") VN 
-							.dropdown-menu 
-								ul.type-none
-									li 
-										a(href="#") EN 
-					.main-menu-top
-						ul.menu-list.type-none
-							li 
-								a(href="#") Contact Us
-							li 
-								a(href="#") Distribution
-					.main-search
-						.searchbox
-							input(type="text" placeholder="Search... ")
-							button(type="submit") 
-								em.fa.fa-search
-					.button-hambuger
-						.burger-bt-inner
-							span
-				.bottom-wrap 
-					ul.menu-list.type-none
-						li.has-mega-menu 
-							a(href="#") Our Story
-							.mega-menu
-								ul.mega-list.type-none
-									li 
-										a(href="#") Overview
-									li 
-										a(href="#") Vietnamese pride
-									li 
-										a(href="#") Our breweries
-									li 
-										a(href="#") Distribution
-									li 
-										a(href="#") Faqs
-							span.arrow-down-mobile
-						li.has-mega-menu 
-							a(href="#") Our brands
-							.mega-menu
-								ul.mega-list.type-none
-									li.has-mega-child
-										a(href="#") Bear 
-										.mega-menu 
-											ul.mega-list.type-none
-												li 
-													a(href="#") Saigon Special
-												li 
-													a(href="#") Sai Gon Export
-												li 
-													a(href="#") Saigon Larger
-												li 
-													a(href="#") 333 Export
-												li 
-													a(href="#") Saigon Gold
-										span.arrow-down-mobile
-									li 
-										a(href="#") Alcohol
-									li 
-										a(href="#") Beverage
-							span.arrow-down-mobile
-						li.has-mega-menu
-							a(href="#") Investors
-							.mega-menu
-								ul.mega-list.type-none
-									li 
-										a(href="#") information disclosure
-									li 
-										a(href="#") financial statements
-									li 
-										a(href="#") annual general meetings
-									li 
-										a(href="#") annual reports
-									li 
-										a(href="#") corporate governancE
-									li 
-										a(href="#") investor news
-							span.arrow-down-mobile
-						li 
-							a(href="#") Sustainability
-						li 
-							a(href="#") Newsroom
-						li.has-mega-menu
-							a(href="#") Careers
-							.mega-menu
-								ul.mega-list.type-none
-									li 
-										a(href="#") Recruitment
-									li 
-										a(href="#") Working Culture at sabeco
-							span.arrow-down-mobile
-	.mobile-wrap 
-		.language-social
+header.kv-header
+	nav.navbar
+		.container.d-flex.align-center
+			.navbar-brand
+				a(href="")
+					img.lazyload(data-src="./img/logo.png" alt="")
+			.navbar-right.d-flex.align-center.ml-auto
+				.header-icons.d-flex.align-center
+					.language
+						a.text-uppercase.f-22.fw-500.text-gray(href="") vn
+						a.text-uppercase.f-22.fw-500.text-gray(href="") en
+					.btn-search
+						em.ri-search-line
+				.kv-toggle
+					span
+					span
+					span
+					span
+			.main-nav.transition
+				.container
+					.logo-main-menu
+					.row
+						.col-lg-3.col-md-6.col-sm-6
+							.item
+								.nav-title.f-25.fw-700.color-white
+									a(href="tong-quan.html") Giới thiệu về SOL
+									span.ri-arrow-drop-down-line
+								ul
+									li.nav-item
+										a.nav-link.f-20.fw-500.color-white(href="thong-diep.html") Thông điệp Tổng Giám đốc
+
+									li.nav-item
+										a.nav-link.f-20.fw-500.color-white(href="tong-quan.html") Về SOL
+
+									li.nav-item
+										a.nav-link.f-20.fw-500.color-white(href="van-hoa.html") Văn hoá doanh nghiệp
+									li.nav-item
+										a.nav-link.f-20.fw-500.color-white(href="ban-lanh-dao.html") Bạn lãnh đạo
+									li.nav-item
+										a.nav-link.f-20.fw-500.color-white(href="khac-biet-sol.html") Khác biệt của SOL
+						.col-lg-3.col-md-6.col-sm-6
+							.item
+								.nav-title.f-25.fw-700.color-white
+									a(href="linh-vuc.html") Lĩnh vực hoạt động
+									span.ri-arrow-drop-down-line
+								ul
+									li.nav-item
+										a.nav-link.f-20.fw-500.color-white(href="") Xây lắp
+
+									li.nav-item
+										a.nav-link.f-20.fw-500.color-white(href="") Thương mại
+
+									li.nav-item
+										a.nav-link.f-20.fw-500.color-white(href="") Đầu tư
+						.col-lg-3.col-md-6.col-sm-6
+							.item
+								.nav-title.fw-700.color-white.f-25
+									a(href="du-an.html") Dự án
+									span.ri-arrow-drop-down-line
+								ul
+									li.nav-item
+										a.nav-link.f-20.fw-500.color-white(href="") Công nghiệp
+
+									li.nav-item
+										a.nav-link.f-20.fw-500.color-white(href="") Dân dụng - Thương mại
+
+									li.nav-item
+										a.nav-link.f-20.fw-500.color-white(href="") Khách sạn - Khu nghỉ mát
+									li.nav-item
+										a.nav-link.f-20.fw-500.color-white(href="") Giáo dục
+						.col-lg-3.col-md-6.col-sm-6
+							.item
+								.nav-title.fw-700.color-white.f-25
+									a(href="") Cuộc sống tại SOL
+									span.ri-arrow-drop-down-line
+								ul
+									li.nav-item
+										a.nav-link.f-20.fw-500.color-white(href="") Chính sách nhân sự
+
+									li.nav-item
+										a.nav-link.f-20.fw-500.color-white(href="") Đại gia đình SOL
+
+									li.nav-item
+										a.nav-link.f-20.fw-500.color-white(href="") Tuyển dụng
+						.col-lg-3.col-md-4.col-sm-6
+							.item
+								.nav-title.fw-700.color-white.f-25
+									a(href="") Tin tức - Sự kiện
+						.col-lg-3.col-md-4.col-sm-6
+							.item
+								.nav-title.fw-700.color-white.f-25
+									a(href="") Khách hàng - Đối tác
+						.col-lg-3.col-md-4.col-sm-6
+							.item
+								.nav-title.fw-700.color-white.f-25
+									a(href="") Thông tin liên hệ
+					.menu-icons
+						ul.d-flex.align-center
+							li
+								a(href="")
+									img(src="./img/icon/face.png" alt="")
+							li
+								a(href="")
+									img(src="./img/icon/youtube.png" alt="")
+							li
+								a(href="")
+									img(src="./img/icon/inlink.png" alt="")
+				.close
+					em.f-40.color-white.fw-900.ri-close-fill
+	.search-wrapper.transition
+		.container
+			.form-group.d-flex.align-center
+				input(type="text" placeholder="Tìm sản phẩm...")
+				button.searchbutton.btn.btn__search
+					em.ri-search-line
+		.close
+			em.f-40.color-white.fw-900.ri-close-fill
+
+
+

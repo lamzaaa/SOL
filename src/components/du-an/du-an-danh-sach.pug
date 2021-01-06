@@ -1,0 +1,301 @@
+.tab-panels.list-tabs
+	.container
+		ul.tabs
+			li.item.active(rel='panel-1')
+				span Công nghiệp
+			li.item(rel='panel-2')
+				span Dân dung - Thương mại
+			li.item(rel='panel-3')
+				span Khách sạn - Khu nghỉ mát
+			li.item(rel='panel-4')
+				span Giáo dục
+	section.kv-section.project-page
+		.container
+			.wrapper-content#panel-1.panel.active
+				.filter-wrapper.d-flex.align-center
+					.wrapper.d-flex.align-center
+						.title Trạng thái
+						.dropdown.d-flex.align-center.justify-between
+							a.nav-link.f-16.fw-500.d-flex.align-center.justify-between(href="#")
+								.text Đã thực hiện
+								em.ri-arrow-down-s-line
+							.dropdown-menu
+								ul
+									li
+										a(href="#") Đang thực hiện
+									li
+										a(href="#") Đã thực hiện
+					.wrapper.d-flex.align-center
+						.title Vùng miền
+						.dropdown.d-flex.align-center.justify-between
+							a.nav-link.f-16.fw-500.d-flex.align-center.justify-between(href="#")
+								.text Miền Nam
+								em.ri-arrow-down-s-line
+							.dropdown-menu
+								ul
+									li
+										a(href="") Miền Bắc
+									li
+										a(href="") Miền Trung
+									li
+										a(href="") Miền Nam
+					.wrapper.d-flex.align-center
+						.title Năm
+						.dropdown.d-flex.align-center.justify-between
+							a.nav-link.f-16.fw-500.d-flex.align-center.justify-between(href="#")
+								.text 2018
+								em.ri-arrow-down-s-line
+							.dropdown-menu
+								ul
+									li
+										a(href="") 2020
+									li
+										a(href="") 2019
+									li
+										a(href="") 2018
+				.row
+					//- -for(i=1; i<10; i++)
+					.col-lg-4
+						.project-item
+							.img
+								a(href="")
+									img.lazyload(data-src="./img/du-an/project-1.png" alt="")
+							.content.d-flex.align-center
+								a(href="").text.f-30.fw-700.color-white.text-center.text-uppercase uniben
+						.project-detail
+							.container
+								.main-title.color-main uniben
+								.list-tabs
+									ul.tabs-detail
+										li.item.active(rel='project-1')
+											span Thông tin dự án
+										li.item(rel='project-2')
+											span Hình ảnh dự án
+										.close Đóng
+									.wrapper-content#project-1.project.active
+										table
+											tr
+												td Tên dự án
+												td Nhà máy Uniben Bình Dương
+											tr
+												td Loại hình
+												td Nhà xưởng công nghiệp
+											tr
+												td Địa điểm
+												td Số 32, đường số 30, KCN VSIP-II, huyện Bắc Tân Uyên, tỉnh Bình Dương
+											tr
+												td Chủ đầu tư
+												td Uniben
+											tr
+												td Vùng miền
+												td Miền Nam
+											tr
+												td Thời gian thi công
+												td 06 tháng
+											tr
+												td Vai trò
+												td Tổng thầu thi công
+											tr
+												td Năm
+												td 2018
+											tr
+												td Hạng mục thi công
+												td Xưởng chính, văn phòng, hạng mục phụ trợ
+											tr
+												td Tổng giá trị
+												td 150 tỷ đồng
+									.wrapper-content#project-2.project
+										.slide-detail
+											.swiper-container.gallery-top
+												.swiper-wrapper
+													-for(i=1; i<6; i++)
+														.swiper-slide
+															img.lazyload(data-src="./img/du-an/project-"+i+".png" alt="")
+											.swiper-container.gallery-thumbs
+												.swiper-wrapper
+													-for(i=1; i<6; i++)
+														.swiper-slide
+															img.lazyload(data-src="./img/du-an/project-"+i+".png" alt="")
+											.swiper-button-next
+											.swiper-button-prev
+					ul.pagination
+						li.active
+							a(href="") 1
+						li
+							a(href="") 2
+						li
+							a(href="") 3
+			.wrapper-content#panel-2.panel
+				.filter-wrapper.d-flex.align-center
+					.wrapper.d-flex.align-center
+						.title Trạng thái
+						.dropdown.d-flex.align-center.justify-between
+							a.nav-link.f-16.fw-500.d-flex.align-center.justify-between(href="#")
+								.text Đã thực hiện
+								em.ri-arrow-down-s-line
+							.dropdown-menu
+								ul
+									li
+										a(href="#") Đang thực hiện
+									li
+										a(href="#") Đã thực hiện
+					.wrapper.d-flex.align-center
+						.title Vùng miền
+						.dropdown.d-flex.align-center.justify-between
+							a.nav-link.f-16.fw-500.d-flex.align-center.justify-between(href="#")
+								.text Miền Nam
+								em.ri-arrow-down-s-line
+							.dropdown-menu
+								ul
+									li
+										a(href="") Miền Bắc
+									li
+										a(href="") Miền Trung
+									li
+										a(href="") Miền Nam
+					.wrapper.d-flex.align-center
+						.title Năm
+						.dropdown.d-flex.align-center.justify-between
+							a.nav-link.f-16.fw-500.d-flex.align-center.justify-between(href="#")
+								.text 2018
+								em.ri-arrow-down-s-line
+							.dropdown-menu
+								ul
+									li
+										a(href="") 2020
+									li
+										a(href="") 2019
+									li
+										a(href="") 2018
+				.row
+					-for(i=1; i<10; i++)
+						.col-lg-4
+							.project-item
+								.img
+									a(href="")
+										img.lazyload(data-src="./img/du-an/project-"+i+".png" alt="")
+								.content.d-flex.align-center
+									a(href="").text.f-30.fw-700.color-white.text-center.text-uppercase uniben
+					ul.pagination
+						li.active
+							a(href="") 1
+						li
+							a(href="") 2
+						li
+							a(href="") 3
+			.wrapper-content#panel-3.panel
+				.filter-wrapper.d-flex.align-center
+					.wrapper.d-flex.align-center
+						.title Trạng thái
+						.dropdown.d-flex.align-center.justify-between
+							a.nav-link.f-16.fw-500.d-flex.align-center.justify-between(href="#")
+								.text Đã thực hiện
+								em.ri-arrow-down-s-line
+							.dropdown-menu
+								ul
+									li
+										a(href="#") Đang thực hiện
+									li
+										a(href="#") Đã thực hiện
+					.wrapper.d-flex.align-center
+						.title Vùng miền
+						.dropdown.d-flex.align-center.justify-between
+							a.nav-link.f-16.fw-500.d-flex.align-center.justify-between(href="#")
+								.text Miền Nam
+								em.ri-arrow-down-s-line
+							.dropdown-menu
+								ul
+									li
+										a(href="") Miền Bắc
+									li
+										a(href="") Miền Trung
+									li
+										a(href="") Miền Nam
+					.wrapper.d-flex.align-center
+						.title Năm
+						.dropdown.d-flex.align-center.justify-between
+							a.nav-link.f-16.fw-500.d-flex.align-center.justify-between(href="#")
+								.text 2018
+								em.ri-arrow-down-s-line
+							.dropdown-menu
+								ul
+									li
+										a(href="") 2020
+									li
+										a(href="") 2019
+									li
+										a(href="") 2018
+				.row
+					-for(i=1; i<10; i++)
+						.col-lg-4
+							.project-item
+								.img
+									a(href="")
+										img.lazyload(data-src="./img/du-an/project-"+i+".png" alt="")
+								.content.d-flex.align-center
+									a(href="").text.f-30.fw-700.color-white.text-center.text-uppercase uniben
+					ul.pagination
+						li.active
+							a(href="") 1
+						li
+							a(href="") 2
+						li
+							a(href="") 3
+			.wrapper-content#panel-4.panel
+				.filter-wrapper.d-flex.align-center
+					.wrapper.d-flex.align-center
+						.title Trạng thái
+						.dropdown.d-flex.align-center.justify-between
+							a.nav-link.f-16.fw-500.d-flex.align-center.justify-between(href="#")
+								.text Đã thực hiện
+								em.ri-arrow-down-s-line
+							.dropdown-menu
+								ul
+									li
+										a(href="#") Đang thực hiện
+									li
+										a(href="#") Đã thực hiện
+					.wrapper.d-flex.align-center
+						.title Vùng miền
+						.dropdown.d-flex.align-center.justify-between
+							a.nav-link.f-16.fw-500.d-flex.align-center.justify-between(href="#")
+								.text Miền Nam
+								em.ri-arrow-down-s-line
+							.dropdown-menu
+								ul
+									li
+										a(href="") Miền Bắc
+									li
+										a(href="") Miền Trung
+									li
+										a(href="") Miền Nam
+					.wrapper.d-flex.align-center
+						.title Năm
+						.dropdown.d-flex.align-center.justify-between
+							a.nav-link.f-16.fw-500.d-flex.align-center.justify-between(href="#")
+								.text 2018
+								em.ri-arrow-down-s-line
+							.dropdown-menu
+								ul
+									li
+										a(href="") 2020
+									li
+										a(href="") 2019
+									li
+										a(href="") 2018
+				.row
+					-for(i=1; i<10; i++)
+						.col-lg-4
+							.project-item
+								.img
+									a(href="")
+										img.lazyload(data-src="./img/du-an/project-"+i+".png" alt="")
+								.content.d-flex.align-center
+									a(href="").text.f-30.fw-700.color-white.text-center.text-uppercase uniben
+					ul.pagination
+						li.active
+							a(href="") 1
+						li
+							a(href="") 2
+						li
+							a(href="") 3

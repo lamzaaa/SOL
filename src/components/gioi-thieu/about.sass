@@ -1,0 +1,191 @@
+.about-page
+	background-color: #f5f5f5
+	border-top: solid 2px #dedede
+	.wrapper-content
+		width: 100%
+		.wrap-img
+			max-width: 1020px
+			margin: 0 auto
+			.img
+				margin-bottom: 30px
+				+img-ratio(572/1020)
+		.wrap-content
+			p
+				font-size: 1rem
+				font-weight: 300
+				line-height: 30px
+				color: $gray
+				padding-bottom: 20px
+		@media screen and ( max-width: 991.98px)
+			.wrap-img
+				.img
+					margin-bottom: 10px
+			.wrap-content
+				p
+					padding-bottom: 10px
+.about-message
+	background-color: #f5f5f5
+	.wrapper-content
+		width: 100%
+		.wrap-img
+			max-width: 1020px
+			margin: 0 auto
+			.img
+				margin-bottom: 30px
+				+img-ratio(572/1020)
+		.wrap-content
+			p
+				font-size: 1rem
+				font-weight: 300
+				line-height: 30px
+				color: $gray
+				padding-bottom: 20px
+				&:first-child,
+					font-weight: 700
+			span
+				font-weight: 700
+		@media screen and ( max-width: 991.98px)
+			.wrap-img
+				.img
+					margin-bottom: 10px
+			.wrap-content
+				p
+					padding-bottom: 10px
+.about-leader
+	background-color: #f5f5f5
+	.wrapper-content
+		.leader-item
+			width: 100%
+			max-height: 510px
+			background-color: $white
+			box-shadow: 0 0 11px rgba(33,33,33,.2)
+			.img
+				a
+					+img-ratio(400/285)
+			.content
+				padding-left: 32px
+				padding-bottom: 32px
+				.name
+					line-height: 61.14px
+				.desc
+					position: relative
+					padding-left: 45px
+					line-height: 22px
+					&::before
+						position: absolute
+						content: ''
+						top: 50%
+						left: 0
+						transform: translateY(-50%)
+						width: 35px
+						height: 2px
+						background-color: $red
+		@media screen and ( max-width: 1199.98px)
+			.leader-item
+				.content
+					padding-left: 15px
+					padding-bottom: 15px
+					.name
+						line-height: 51.14px
+		@media screen and ( max-width: 991.98px)
+			.leader-item
+				margin-bottom: 30px
+		@media screen and ( max-width: 575.98px)
+			.leader-item
+				max-height: unset
+		&#panel-1
+			.row
+				justify-content: flex-end
+		&#panel-2
+			.row
+				justify-content: flex-start
+#popup
+	padding: 30px !important
+	max-width: 1080px
+	overflow: unset !important
+	.leader-detail
+		.col-left
+			width: 50%
+			.img
+				+img-ratio(695/495)
+		.col-right
+			width: 50%
+			padding-left: 53px
+			padding-right: 63px
+			padding-top: 52px
+			background-color: #f1f0ef
+			.title
+				line-height: 61.14px
+			.sub-title
+				position: relative
+				padding-left: 45px
+				line-height: 22px
+				&::before
+					position: absolute
+					content: ''
+					top: 50%
+					left: 0
+					transform: translateY(-50%)
+					width: 35px
+					height: 2px
+					background-color: $red
+			.desc
+				padding-top: 15px
+				p
+					font-size: 1rem
+					font-weight: 300
+					color: $gray
+					line-height: 30px
+					padding-bottom: 15px
+					&:last-child
+						padding-bottom: 0
+	@media screen and ( max-width: 1366.98px)
+		max-width: unset
+		width: 600px
+		.leader-detail
+			.col-left
+				.img
+					+img-ratio(400/285)
+			.col-right
+				padding: 15px
+				.desc
+					max-height: 250px
+					overflow-y: auto
+	@media screen and ( max-width: 575.98px)
+		padding: 15px !important
+		width: 400px
+		.leader-detail
+			flex-direction: column
+			.col-left
+				width: 100%
+				.img
+					padding-top: 0
+					img
+						position: static
+			.col-right
+				width: 100%
+				.title
+					line-height: 30px
+
+				.desc
+					padding-top: 0
+					max-height: 230px
+					p
+						padding-bottom: 7px
+						line-height: 22px
+	@media screen and ( max-width: 375.98px)
+		width: 290px
+	.fancybox-close-small
+		right: unset
+		left: 100%
+		width: 40px !important
+		height: 40px !important
+		background-color: $main
+		opacity: 1
+		border: none !important
+		svg
+			display: none
+		&:focus
+			outline: none !important
+		&::before
+			content: url('../img/icon/close.png')
