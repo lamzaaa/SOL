@@ -163,26 +163,44 @@ function listBanerSlide() {
 			},
 		});
 	});
-	var galleryThumbs = new Swiper('.slide-detail .gallery-thumbs', {
-		spaceBetween: 10,
-		slidesPerView: 5,
-		loop: true,
-		freeMode: true,
-		loopedSlides: 5,
-		watchSlidesVisibility: true,
-		watchSlidesProgress: true,
-	});
-	var galleryTop = new Swiper('.slide-detail .gallery-top', {
-		spaceBetween: 10,
-		loop: true,
-		loopedSlides: 5,
-		navigation: {
-			nextEl: '.slide-detail .swiper-button-next',
-			prevEl: '.slide-detail .swiper-button-prev',
-		},
-		thumbs: {
-			swiper: galleryThumbs,
-		},
+
+	$(".project-item-col").each(function (index, element) {
+		var $this = $(this);
+		$this.find('.gallery-top').addClass("instance-gallery-top-" + index);
+		$this.find('.gallery-thumbs').addClass("instance-gallery-thumbs-" + index);
+		$this.find(".swiper-button-prev").addClass("swiper-button-prev-" + index);
+		$this
+			.find(".swiper-button-next")
+			.addClass("swiper-button-next-" + index);
+		$this
+			.find(".swiper-pagination")
+			.addClass("swiper-pagination-" + index);
+		var galleryThumbs = new Swiper(".instance-gallery-thumbs-" + index, {
+			spaceBetween: 30,
+			slidesPerView: 5,
+			loop: true,
+			freeMode: true,
+			loopedSlides: 5,
+			watchSlidesVisibility: true,
+			watchSlidesProgress: true,
+			observer: true,
+			observeParents: true,
+		});
+		var galleryTop = new Swiper(".instance-gallery-top-" + index, {
+			observer: true,
+			observeParents: true,
+			spaceBetween: 10,
+			loop: true,
+			loopedSlides: 5,
+			navigation: {
+				nextEl: '.swiper-button-next-' + index,
+				prevEl: ".swiper-button-prev-" + index,
+			},
+			thumbs: {
+				swiper: galleryThumbs,
+			},
+		});
+
 	});
 }
 
@@ -220,20 +238,6 @@ function tabs() {
 			$(this).siblings(".tabs").slideToggle("slow");
 		});
 	}
-	$(".tabs-detail > li").on("click", function () {
-		let $panel = $(this).closest(".list-tabs");
-		$panel.find("li.active").removeClass("active");
-		$(this).addClass("active");
-		let panelToShow = $(this).attr("rel");
-		$panel.find(".project.active").fadeOut(300, showNextPanel);
-
-		function showNextPanel() {
-			$(this).removeClass("active");
-			$("#" + panelToShow).fadeIn(300, function () {
-				$(this).addClass("active").fadeIn(300);
-			});
-		}
-	});
 }
 
 function setBackgroundElement() {
@@ -254,6 +258,46 @@ function setBackgroundElement() {
 	});
 }
 
+function projectDetail() {
+	$('.project-item').on('click', function (e) {
+		let $paddingtop = $(this).next().outerHeight();
+		let $detailbox = $(this).next();
+		$detailbox.toggleClass('active');
+		$('.project-item-col').find('.arrow').slideToggle();
+		if ($detailbox.hasClass('active')) {
+			$('.project-item-col').css('padding-bottom', $paddingtop);
+			$('.project-item-col').find('.project-detail.active').slideToggle();
+		} else {
+			$('.project-item-col').css('padding-bottom', 0);
+			$('.project-item-col').find('.project-detail').slideUp();
+		}
+		$('.project-item-col .project-item').not(this).next().removeClass('active');
+		$('.project-item-col .project-item').not(this).parent('.project-item-col').css('padding-bottom', 0);
+		$('.project-item-col .project-item').not(this).parent('.project-item-col').find('.arrow').css('display', 'none');
+		$(".tabs-detail > li").on("click", function () {
+			let $panel = $(this).closest(".list-tabs");
+			$panel.find("li.active").removeClass("active");
+			$(this).addClass("active");
+			let panelToShow = $(this).attr("rel");
+			$panel.find(".project.active").fadeOut(300, showNextPanel);
+
+			function showNextPanel() {
+				$(this).removeClass("active");
+				$("#" + panelToShow).fadeIn(300, function () {
+					$(this).addClass("active").fadeIn(300);
+				});
+			}
+		});
+		e.stopPropagation();
+	});
+	$('.project-item-col').find('.close ').on('click', function () {
+		$('.project-item-col').find('.project-detail').removeClass('active');
+		$('.project-item-col').find('.project-detail').slideUp();
+		$('.project-item-col').find('.arrow').css('display', 'none');
+		$('.project-item-col').css('padding-bottom', 0);
+	});
+}
+
 $(document).ready(function () {
 	initMapping();
 	mainMenu();
@@ -261,4 +305,7 @@ $(document).ready(function () {
 	checkLayoutBanner();
 	tabs();
 	setBackgroundElement();
+	projectDetail();
+
+
 });

@@ -383,7 +383,7 @@
 		content: url('../img/icon/left.png') !important
 .catalog-box
 	width: 100%
-	line-height: 61.14px
+	line-height: 40.14px
 	cursor: pointer
 	margin-bottom: 10px
 	background-color: $main
@@ -412,7 +412,7 @@
 				font-size: 18/16*1rem
 				font-weight: 300
 				color: $gray
-				line-height: 61.14px
+				line-height: 40.14px
 
 			&:first-child
 				padding-left: 0
@@ -444,3 +444,20 @@
 		display: none
 		&.active
 			display: block
+	@media screen and ( max-width: 991.98px )
+		.tabs
+			.item
+				padding: 0 10px
+	@media screen and ( max-width: 767.98px )
+		.tabs
+			.item
+				padding: 0 5px
+				span
+					font-size: 1rem
+					line-height: 30px
+	@media screen and ( max-width: 575.98px )
+		.tabs
+			display: none
+			.item
+				&::before
+					display: none

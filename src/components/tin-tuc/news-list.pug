@@ -1,0 +1,27 @@
+section.kv-section.news-list
+	.container
+		.main-title.color-main tin tức
+		.big-img
+			.row
+				.col-lg-6
+					.img
+						a(href="")
+							img.lazyload(data-src="./img/tin-tuc/item-1.png" alt="")
+				.col-lg-6
+					.content
+						.title
+							a.fw-800.f-20.line-30.color-main(href="") SOL áp dụng công nghệ chống thấm POLYUREA tại công trường trọng điểm
+						time 22/10/2021
+						.desc Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Quis ipsum suspendisse ultrices gravida.Quis ipsum suspendisse ultrices gravida.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Quis ipsum suspendisse ultrices gravida.Quis ipsum suspendisse ultrices gravida.
+		.small-img
+			.row
+				-for(i=2; i<10; i++)
+					.col-lg-3
+						.item
+							.img
+								a(href="")
+									img.lazyload(data-src="./img/tin-tuc/item-1.png" alt="")
+							.content
+								.title
+									a.fw-800.f-20.line-30.color-main.lcl.lcl-3(href="") SOL trúng thầu loạt dự án lớn tại với tổng giá trị gói thầu hơn 2000 tỷ đồng
+								time 22/10/2021

@@ -1,13 +1,13 @@
-.tab-panels.list-tabs
-	.container
-		ul.tabs
-			li.item.active(rel='panel-1')
-				span Ban lãnh đạo
-			li.item(rel='panel-2')
-				span Cán bộ quản lý
-	section.kv-section.about-leader
+section.kv-section.about-leader
+	.tab-panels.list-tabs
 		.container
-			.wrapper-content#panel-1.panel.active
+			ul.tabs
+				li.item.active(rel='panel-1')
+					span Ban lãnh đạo
+				li.item(rel='panel-2')
+					span Cán bộ quản lý
+		.wrapper-content#panel-1.panel.active
+			.container
 				.row
 					.col-lg-3.col-md-4.col-sm-6
 						.leader-item.zoom-img
@@ -45,7 +45,8 @@
 								a(data-fancybox data-src="#popup" href="javascript:;")
 									.name.f-24.fw-700.text-capitalize.color-main lê chí trung
 									.desc.f-14.fw-400.text-uppercase ceo
-			.wrapper-content#panel-2.panel
+		.wrapper-content#panel-2.panel
+			.container
 				.row
 					.col-lg-3.col-md-4.col-sm-6
 						.leader-item.zoom-img

@@ -1,7 +1,17 @@
 .about-page
-	background-color: #f5f5f5
-	border-top: solid 2px #dedede
+	padding-top: 0
+	padding-bottom: 0
+	.tab-panels
+		@media screen and ( max-width: 575.98px )
+			.tabs
+				display: flex
+				.item
+					&::before
+						display: block
 	.wrapper-content
+		background-color: #f5f5f5
+		border-top: solid 2px #dedede
+		padding: 50px 0
 		width: 100%
 		.wrap-img
 			max-width: 1020px
@@ -52,8 +62,19 @@
 				p
 					padding-bottom: 10px
 .about-leader
-	background-color: #f5f5f5
+	padding-top: 0
+	padding-bottom: 0
+	.tab-panels
+		@media screen and ( max-width: 575.98px )
+			.tabs
+				display: flex
+				.item
+					&::before
+						display: block
 	.wrapper-content
+		background-color: #f5f5f5
+		border-top: solid 2px #dedede
+		padding: 50px 0
 		.leader-item
 			width: 100%
 			max-height: 510px

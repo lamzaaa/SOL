@@ -1,6 +1,6 @@
 .project-page
-	border-top: solid 2px #dedede
 	position: relative
+	padding: 0
 	.filter-wrapper
 		.wrapper
 			margin-right: 50px
@@ -38,8 +38,34 @@
 								a
 									color: $main
 									font-weight: 700
-
+		@media screen and ( max-width: 1199.98px)
+			.wrapper
+				.title
+					padding-right: 15px
+				.dropdown
+					.nav-link
+						width: auto
+						.text
+							padding-right: 10px
+		@media screen and ( max-width: 991.98px )
+			.wrapper
+				margin-right: auto
+		@media screen and ( max-width: 767.98px )
+			flex-direction: column
+			align-items: flex-start
+			.wrapper
+				width: 100%
+				padding-top: 10px
+				margin-right: 0
+				.title
+					width: 20%
+				.dropdown
+					width: 80%
+					.nav-link
+						width: 100%
 	.wrapper-content
+		border-top: solid 2px #dedede
+		padding: 30px 0
 		.col-lg-4
 			position: static
 		.project-item
@@ -75,6 +101,18 @@
 				transition: all 1s cubic-bezier(.22, .44, 0, 1)
 				.text
 					width: 100%
+			.arrow
+				content: ""
+				position: absolute
+				border-style: solid
+				border-width: 0 20px 20px 20px
+				border-color: $main transparent
+				width: 0
+				z-index: 10
+				margin-top: 15px
+				left: 50%
+				transform: translateX(-50%)
+				display: none
 			@media screen and ( min-width: 1024.98px)
 				&:hover
 					.img
@@ -92,8 +130,10 @@
 			width: 100%
 			background-color: #f5f5f5
 			z-index: 10
-			margin-top: 40px
+			margin-top: 35px
 			padding: 60px 0
+			display: none
+
 			.list-tabs
 				.tabs-detail
 					.item
@@ -117,7 +157,12 @@
 							background-color: $gray
 							top: 100%
 							left: 0
-				.wrapper-content
+					@media screen and ( max-width: 575.98px )
+						.item
+							padding: 0 10px
+							&:first-child
+								padding-left: 0
+				#project-1
 					margin-top: 40px
 					padding: 0 30px
 					background-color: $white
@@ -133,8 +178,40 @@
 									color: $gray
 							&:last-child
 								border: none
-			&::before
-				position: absolute
-				top: -20px
-				left: 27%
-				content: url('../img/icon/top.png')
+					@media screen and ( max-width: 575.98px )
+						padding: 15px 30px
+						table
+							tr
+								td
+									line-height: 30px
+									&:first-child
+										width: 50%
+				#project-2
+					.slide-detail
+						position: relative
+						max-width: 1020px
+						margin: 0 auto
+						padding-top: 30px
+						.gallery-top
+							margin-bottom: 30px
+							.img
+								cursor: pointer
+								+img-ratio(620/1020)
+						.gallery-thumbs
+							.img
+								cursor: pointer
+								+img-ratio(110/180)
+							.swiper-slide
+								.img
+									border: solid 1px transparent
+								&-thumb
+									&-active
+										.img
+											border: solid 1px $red
+						.swiper-button-next,
+						.swiper-button-prev
+							top: 96%
+						.swiper-button-next
+							right: -75px
+						.swiper-button-prev
+							left: -75px
