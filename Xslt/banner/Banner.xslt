@@ -17,9 +17,28 @@
     <xsl:template match="Banner">
         <div class="swiper-slide">
             <div class="slide-inner">
-                <img class="lazyload">
-                    <xsl:attribute name="data-src">
+                <img >
+                    <xsl:attribute name="src">
                         <xsl:value-of select="ImageUrl"></xsl:value-of>
+                    </xsl:attribute>
+                    <xsl:attribute name="alt">
+                        <xsl:value-of select="Title"></xsl:value-of>
+                    </xsl:attribute>
+                </img>
+                <xsl:if test="Description != ''">
+                    <div class="content">
+                        <div class="container d-flex justify-end">
+                            <div class="text">
+                                <xsl:value-of select="Description"></xsl:value-of>
+                            </div>
+                        </div>
+                    </div>
+                </xsl:if>
+            </div>
+            <div class="slide-inner-mobile">
+                <img>
+                    <xsl:attribute name="data-src">
+                        <xsl:value-of select="ThumbnailUrl"></xsl:value-of>
                     </xsl:attribute>
                     <xsl:attribute name="alt">
                         <xsl:value-of select="Title"></xsl:value-of>

@@ -1,7 +1,9 @@
 .project-page
 	position: relative
-	padding: 0
+	padding-top: 0
 	.filter-wrapper
+		padding: 30px 0
+		border-top: solid 2px #dedede
 		.wrapper
 			margin-right: 50px
 			.title
@@ -10,34 +12,32 @@
 				font-weight: 700
 				color: $gray
 				padding-right: 20px
-			.dropdown
-				.nav-link
-					border-width: 1px
-					border-color: rgb(224, 224, 224)
-					border-style: solid
-					background-color: rgb(255, 255, 255)
-					width: 198px
-					height: 38px
-					padding-left: 18px
-					padding-right: 18px
-					.text
-						font-weight: 300
-						font-size: 1rem
-						color: $gray
-						line-height: 24px
-				.dropdown-menu
-					border-radius: 0
-					ul
-						li
-							a
-								font-weight: 300
-								font-size: 1rem
-								color: $gray
-								line-height: 30px
-							&:hover
-								a
-									color: $main
-									font-weight: 700
+			select
+				border-width: 1px
+				border-color: rgb(224, 224, 224)
+				border-style: solid
+				background-color: rgb(255, 255, 255)
+				width: 198px
+				height: 38px
+				padding-left: 18px
+				padding-right: 18px
+				font-weight: 300
+				font-size: 1rem
+				color: $gray
+				line-height: 24px
+				// .dropdown-menu
+				// 	border-radius: 0
+				// 	ul
+				// 		li
+				// 			a
+				// 				font-weight: 300
+				// 				font-size: 1rem
+				// 				color: $gray
+				// 				line-height: 30px
+				// 			&:hover
+				// 				a
+				// 					color: $main
+				// 					font-weight: 700
 		@media screen and ( max-width: 1199.98px)
 			.wrapper
 				.title
@@ -51,33 +51,58 @@
 			.wrapper
 				margin-right: auto
 		@media screen and ( max-width: 767.98px )
-			flex-direction: column
-			align-items: flex-start
-			.wrapper
-				width: 100%
-				padding-top: 10px
-				margin-right: 0
-				.title
-					width: 20%
-				.dropdown
-					width: 80%
-					.nav-link
-						width: 100%
+			.list
+				flex-direction: column
+				align-items: flex-start
+				.wrapper
+					width: 100%
+					padding-top: 10px
+					margin-right: 0
+					.title
+						width: 40%
+					.dropdown
+						width: 80%
+						.nav-link
+							width: 100%
+	.list-tabs
+		.tabs
+			.item
+				a
+					position: relative
+					font-size: 18/16*1rem
+					font-weight: 300
+					color: $gray
+					line-height: 40.14px
+				&.active
+					background: none
+					a
+						color: $main
+						font-weight: 700
+						&::after
+							position: absolute
+							content: ''
+							width: 100%
+							height: 2px
+							background-color: $main
+							top: 100%
+							left: 0
+							z-index: 99
+			@media screen and ( max-width: 991.98px )
+				display: none
+				.item
+					justify-content: center
+					&::before
+						display: none
 	.wrapper-content
-		border-top: solid 2px #dedede
-		padding: 30px 0
 		.col-lg-4
 			position: static
 		.project-item
 			position: relative
-			margin-top: 30px
+			margin-bottom: 30px
 			.img
 				position: relative
 				overflow: hidden
 				+img-ratio(255/390)
-				img
-					transform: scale(1)
-					transition: all .8s cubic-bezier(.22, .44, 0, 1)
 				&::after
 					position: absolute
 					pointer-events: none
@@ -94,6 +119,7 @@
 				top: 50%
 				left: 50%
 				width: 100%
+				padding: 0 20px
 				opacity: 0
 				visibility: hidden
 				z-index: 2
@@ -109,15 +135,13 @@
 				border-color: $main transparent
 				width: 0
 				z-index: 10
-				margin-top: 15px
+				margin-top: 10px
 				left: 50%
 				transform: translateX(-50%)
 				display: none
 			@media screen and ( min-width: 1024.98px)
 				&:hover
 					.img
-						img
-							transform: scale(1.05)
 						&::after
 							width: 100%
 							height: 100%
@@ -130,88 +154,105 @@
 			width: 100%
 			background-color: #f5f5f5
 			z-index: 10
-			margin-top: 35px
+			margin-top: 0
 			padding: 60px 0
 			display: none
-
-			.list-tabs
-				.tabs-detail
-					.item
-						span
-							line-height: 24px
-							&::after
-								top: 120%
-					.close
-						font-size: 18/16*1rem
-						color: $gray
-						font-weight: 300
-						line-height: 24px
-						cursor: pointer
-						margin-left: auto
-						position: relative
-						&::after
-							position: absolute
-							content: ''
-							width: 100%
-							height: 1px
-							background-color: $gray
-							top: 100%
-							left: 0
-					@media screen and ( max-width: 575.98px )
-						.item
-							padding: 0 10px
+			.main-title
+				font-size: 24/16*1rem
+				padding-bottom: 0
+			.container--tabs
+				margin: 0
+			.wrap-content
+				width: 100%
+				height: 590px
+				margin-top: 30px
+				padding: 30px
+				background-color: $white
+				box-shadow: 0 0 11px rgba(33,33,33,.2)
+				table
+					width: 100%
+					tr
+						border-bottom: solid 1px #e0e0e0
+						td
+							line-height: 50px
 							&:first-child
-								padding-left: 0
-				#project-1
-					margin-top: 40px
-					padding: 0 30px
-					background-color: $white
-					box-shadow: 0 0 11px rgba(33,33,33,.2)
+								font-size: 1rem
+								color: $gray
+						&:last-child
+							border: none
+				@media screen and ( max-width: 991.98px )
 					table
-						width: 100%
 						tr
-							border-bottom: solid 1px #e0e0e0
 							td
-								line-height: 50px
+								line-height: 40px
+								height: auto
+				@media screen and ( max-width: 767.98px )
+					padding: 15px 30px
+					height: auto
+					table
+						tr
+							td
+								line-height: 30px
 								&:first-child
-									font-size: 1rem
-									color: $gray
-							&:last-child
-								border: none
-					@media screen and ( max-width: 575.98px )
-						padding: 15px 30px
-						table
-							tr
-								td
-									line-height: 30px
-									&:first-child
-										width: 50%
-				#project-2
-					.slide-detail
-						position: relative
-						max-width: 1020px
-						margin: 0 auto
-						padding-top: 30px
+									width: 50%
+				.slide-detail
+					position: relative
+					display: flex
+					width: 100%
+					height: 530px
+					.gallery-top
+						width: 80%
+						height: 100%
+						margin-right: 10px
+						.img
+							width: 100%
+							height: 100%
+							cursor: pointer
+							img
+								width: 100%
+								height: 100%
+								object-fit: cover
+					.gallery-thumbs
+						width: 20%
+						height: 100%
+						.img
+							width: 100%
+							height: 100%
+							cursor: pointer
+							img
+								width: 100%
+								height: 100%
+								object-fit: cover
+						.swiper-slide
+							.img
+								border: solid 1px transparent
+							&-thumb
+								&-active
+									.img
+										border: solid 1px $red
+					.swiper-button-next,
+					.swiper-button-prev
+						right: 80px
+					.swiper-button-next
+						top: -35px
+						&::after
+							transform: rotate(-90deg)
+					.swiper-button-prev
+						left: unset
+						top: unset
+						bottom: -107px
+						&::after
+							transform: rotate(-90deg)
+					@media screen and ( max-width: 991.98px )
+						height: auto
+						display: block
 						.gallery-top
-							margin-bottom: 30px
+							width: 100%
+							margin-right: 0
+							margin-bottom: 20px
 							.img
-								cursor: pointer
-								+img-ratio(620/1020)
+								+img-ratio(415/630)
 						.gallery-thumbs
+							width: 100%
 							.img
-								cursor: pointer
-								+img-ratio(110/180)
-							.swiper-slide
-								.img
-									border: solid 1px transparent
-								&-thumb
-									&-active
-										.img
-											border: solid 1px $red
-						.swiper-button-next,
-						.swiper-button-prev
-							top: 96%
-						.swiper-button-next
-							right: -75px
-						.swiper-button-prev
-							left: -75px
+								+img-ratio(95/140)

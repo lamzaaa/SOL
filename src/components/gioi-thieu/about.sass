@@ -61,7 +61,7 @@
 			.wrap-content
 				p
 					padding-bottom: 10px
-.about-leader
+.about-page
 	padding-top: 0
 	padding-bottom: 0
 	.tab-panels
@@ -77,30 +77,38 @@
 		padding: 50px 0
 		.leader-item
 			width: 100%
-			max-height: 510px
+			margin-bottom: 30px
 			background-color: $white
 			box-shadow: 0 0 11px rgba(33,33,33,.2)
 			.img
 				a
 					+img-ratio(400/285)
 			.content
-				padding-left: 32px
-				padding-bottom: 32px
+				padding-left: 15px
+				padding-top: 15px
+				display: flex
+				flex-direction: column
+				align-items: flex-start
+				justify-content: center
+				height: 110px
+				a
+					height: 100%
 				.name
-					line-height: 61.14px
+					line-height: 37.14px
+					letter-spacing: -0.5px
+					white-space: nowrap
 				.desc
 					position: relative
-					padding-left: 45px
 					line-height: 22px
-					&::before
-						position: absolute
-						content: ''
-						top: 50%
-						left: 0
-						transform: translateY(-50%)
-						width: 35px
-						height: 2px
-						background-color: $red
+					// &::before
+					// 	position: absolute
+					// 	content: ''
+					// 	top: 50%
+					// 	left: 0
+					// 	transform: translateY(-50%)
+					// 	width: 35px
+					// 	height: 2px
+					// 	background-color: $red
 		@media screen and ( max-width: 1199.98px)
 			.leader-item
 				.content
@@ -114,15 +122,15 @@
 		@media screen and ( max-width: 575.98px)
 			.leader-item
 				max-height: unset
-		&#panel-1
-			.row
-				justify-content: flex-end
+		// &#panel-1
+		// 	.row
+		// 		justify-content: flex-end
 		&#panel-2
 			.row
 				justify-content: flex-start
-#popup
+.popup
 	padding: 30px !important
-	max-width: 1080px
+	width: 1080px
 	overflow: unset !important
 	.leader-detail
 		.col-left

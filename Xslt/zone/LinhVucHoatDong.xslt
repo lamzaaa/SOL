@@ -2,12 +2,12 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:msxsl="urn:schemas-microsoft-com:xslt" exclude-result-prefixes="msxsl">
     <xsl:output method="html" indent="yes"/>
     <xsl:template match="/ZoneList">
+        <div class="main-title color-main">
+            <xsl:value-of select="ModuleTitle"></xsl:value-of>
+        </div>
         <xsl:apply-templates select="Zone" mode="LV1"></xsl:apply-templates>
     </xsl:template>
     <xsl:template match="Zone" mode="LV1">
-        <div class="main-title color-main">
-            <xsl:value-of select="Title"></xsl:value-of>
-        </div>
         <div class="row">
             <div class="col-xl-5 col-lg-12">
                 <div class="col-left">

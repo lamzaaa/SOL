@@ -27,7 +27,8 @@ export const server = () => {
 	})
 
 	watch([
-		"src/js/*.js"
+		"src/js/main.js",
+		// "src/js/Cookie.js"
 	], series(jsTask));
 
 	watch([

@@ -1,3 +1,35 @@
+section.kv-section.home-news-specail
+	.container
+		.row
+			.col-lg-3.col-md-6.col-sm-6.col-12
+				.news-item.zoom-img
+					.img
+						a(href="")
+							img.lazyload(data-src="./img/index/new-1.png" alt="")
+						.hot-news.f12.fw-700.color-white Tin mới
+					.content-wrapper.d-flex.flex-column.justify-between
+						a.title.f-20.fw-800.color-main.line-30.color-main.lcl.lcl-2(href="") Ký kết hợp tác thi công cùng CĐT PiGroup trong dự án PiCity High Park
+			.col-lg-3.col-md-6.col-sm-6.col-12
+				.news-item.zoom-img
+					.img
+						a(href="")
+							img.lazyload(data-src="./img/index/new-1.png" alt="")
+					.content-wrapper.d-flex.flex-column.justify-between
+						a.title.f-20.fw-800.color-main.line-30.color-main.lcl.lcl-2(href="") Ký kết hợp tác thi công cùng CĐT PiGroup trong dự án PiCity High Park 
+			.col-lg-3.col-md-6.col-sm-6.col-12
+				.news-item.zoom-img
+					.img
+						a(href="")
+							img.lazyload(data-src="./img/index/new-1.png" alt="")
+					.content-wrapper.d-flex.flex-column.justify-between
+						a.title.f-20.fw-800.color-main.line-30.color-main.lcl.lcl-2(href="") Ký kết hợp tác thi công cùng CĐT PiGroup trong dự án PiCity High Park 
+			.col-lg-3.col-md-6.col-sm-6.col-12
+				.news-item.zoom-img
+					.img
+						a(href="")
+							img.lazyload(data-src="./img/index/new-1.png" alt="")
+					.content-wrapper.d-flex.flex-column.justify-between
+						a.title.f-20.fw-800.color-main.line-30.color-main.lcl.lcl-2(href="") Ký kết hợp tác thi công cùng CĐT PiGroup trong dự án PiCity High Park 
 section.kv-section.home-field
 	.container
 		.main-title.color-main lĩnh vực hoạt động
@@ -6,45 +38,48 @@ section.kv-section.home-field
 				.col-left
 					.content.f-16.fw-300 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elitsed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
 			.col-xl-7.col-lg-12
-				.col-right.d-flex.flex-wrap.justify-center
-					.item.zoom-img
-						.img
-							a(href="")
-								img.lazyload(data-src="./img/index/field-1.png", alt="")
-								.content.f-36.fw-700.color-white.text-uppercase xây lắp
-					.item.zoom-img
-						.img
-							a(href="")
-								img.lazyload(data-src="./img/index/field-2.png", alt="")
-								.content.f-36.fw-700.color-white.text-uppercase thương mại
-					.item.zoom-img
-						.img
-							a(href="")
-								img.lazyload(data-src="./img/index/field-3.png", alt="")
-								.content.f-36.fw-700.color-white.text-uppercase nước ngoài
-					.item.zoom-img
-						.img
-							a(href="")
-								img.lazyload(data-src="./img/index/field-4.png", alt="")
-								.content.f-36.fw-700.color-white.text-uppercase đầu tư
-				.col-right-mobile
-					.item
-						.img
-							a(href="")
-								img.lazyload(data-src="./img/index/f-1.png", alt="")
-								.content.f-36.fw-700.color-white.text-uppercase xây lắp
-					.item
-						.img
-							a(href="")
-								img.lazyload(data-src="./img/index/f-2.png", alt="")
-								.content.f-36.fw-700.color-white.text-uppercase thương mại
-					.item
-						.img
-							a(href="")
-								img.lazyload(data-src="./img/index/f-3.png", alt="")
-								.content.f-36.fw-700.color-white.text-uppercase nước ngoài
-					.item
-						.img
-							a(href="")
-								img.lazyload(data-src="./img/index/f-4.png", alt="")
-								.content.f-36.fw-700.color-white.text-uppercase đầu tư
+				.col-video
+					video#my_video_1.video-js.vjs-default-skin(controls='' preload='none' data-setup='{"playbackRates": [1, 1.5, 2] }')
+						source(src='https://vjs.zencdn.net/v/oceans.mp4' type='video/mp4')
+				//- .col-right.d-flex.flex-wrap.justify-center
+				//- 	.item.zoom-img
+				//- 		.img
+				//- 			a(href="")
+				//- 				img.lazyload(data-src="./img/index/field-1.png" alt="")
+				//- 				.content.f-36.fw-700.color-white.text-uppercase xây lắp
+				//- 	.item.zoom-img
+				//- 		.img
+				//- 			a(href="")
+				//- 				img.lazyload(data-src="./img/index/field-2.png" alt="")
+				//- 				.content.f-36.fw-700.color-white.text-uppercase thương mại
+				//- 	.item.zoom-img
+				//- 		.img
+				//- 			a(href="")
+				//- 				img.lazyload(data-src="./img/index/field-3.png" alt="")
+				//- 				.content.f-36.fw-700.color-white.text-uppercase nước ngoài
+				//- 	.item.zoom-img
+				//- 		.img
+				//- 			a(href="")
+				//- 				img.lazyload(data-src="./img/index/field-4.png" alt="")
+				//- 				.content.f-36.fw-700.color-white.text-uppercase đầu tư
+				//- .col-right-mobile
+				//- 	.item
+				//- 		.img
+				//- 			a(href="")
+				//- 				img.lazyload(data-src="./img/index/f-1.png" alt="")
+				//- 				.content.f-36.fw-700.color-white.text-uppercase xây lắp
+				//- 	.item
+				//- 		.img
+				//- 			a(href="")
+				//- 				img.lazyload(data-src="./img/index/f-2.png" alt="")
+				//- 				.content.f-36.fw-700.color-white.text-uppercase thương mại
+				//- 	.item
+				//- 		.img
+				//- 			a(href="")
+				//- 				img.lazyload(data-src="./img/index/f-3.png" alt="")
+				//- 				.content.f-36.fw-700.color-white.text-uppercase nước ngoài
+				//- 	.item
+				//- 		.img
+				//- 			a(href="")
+				//- 				img.lazyload(data-src="./img/index/f-4.png" alt="")
+				//- 				.content.f-36.fw-700.color-white.text-uppercase đầu tư

@@ -13,9 +13,9 @@ section.kv-section.project-page
 					span Khách sạn - Khu nghỉ mát
 				li.item(rel='panel-4')
 					span Giáo dục
-		.wrapper-content#panel-1.panel.active
+		.filter-wrapper
 			.container
-				.filter-wrapper.d-flex.align-center
+				.list.d-flex.align-center
 					.wrapper.d-flex.align-center
 						.title Trạng thái
 						.dropdown.d-flex.align-center.justify-between
@@ -56,6 +56,8 @@ section.kv-section.project-page
 										a(href="") 2019
 									li
 										a(href="") 2018
+		.wrapper-content#panel-1.panel.active
+			.container
 				.row
 					-for(i=1; i<10; i++)
 						.col-lg-4.col-md-4
@@ -70,68 +72,61 @@ section.kv-section.project-page
 								.project-detail
 									.container
 										.main-title.color-main uniben
-										.list-tabs
-											ul.tabs-detail
-												li.item.active(rel='project-1')
-													span Thông tin dự án
-												li.item(rel='project-2')
-													span Hình ảnh dự án
-												.close Đóng
-											.wrapper-content#project-1.project.active
-												table
-													tr
-														td Tên dự án
-														td Nhà máy Uniben Bình Dương
-													tr
-														td Loại hình
-														td Nhà xưởng công nghiệp
-													tr
-														td Địa điểm
-														td Số 32, đường số 30, KCN VSIP-II, huyện Bắc Tân Uyên, tỉnh Bình Dương
-													tr
-														td Chủ đầu tư
-														td Uniben
-													tr
-														td Vùng miền
-														td Miền Nam
-													tr
-														td Thời gian thi công
-														td 06 tháng
-													tr
-														td Vai trò
-														td Tổng thầu thi công
-													tr
-														td Năm
-														td 2018
-													tr
-														td Hạng mục thi công
-														td Xưởng chính, văn phòng, hạng mục phụ trợ
-													tr
-														td Tổng giá trị
-														td 150 tỷ đồng
-											.wrapper-content#project-2.project
-												.slide-detail
-													.swiper-container.gallery-top
-														.swiper-wrapper
-															-for(n=1; n<6; n++)
-																.swiper-slide
-																	.img
-																		img.lazyload(data-src="./img/du-an/project-"+n+".png" alt="")
-													.swiper-container.gallery-thumbs
-														.swiper-wrapper
-															-for(x=1; x<6; x++)
-																.swiper-slide
-																	.img
-																		img.lazyload(data-src="./img/du-an/project-"+x+".png" alt="")
-													.swiper-button-next
-													.swiper-button-prev
-					ul.pagination
-						li.active
-							a(href="") 1
-						li
-							a(href="") 2
-						li
-							a(href="") 3
+										.container--tabs
+											ul.nav.nav-tabs
+												li.active
+													a(href='#tab-1') Tab 1
+												li
+													a(href='#tab-2') Tab 2
+											.tab-content
+												#tab-1.wrap-content.tab-pane.active
+													table
+														tr
+															td Tên dự án
+															td Nhà máy Uniben Bình Dương
+														tr
+															td Loại hình
+															td Nhà xưởng công nghiệp
+														tr
+															td Địa điểm
+															td Số 32, đường số 30, KCN VSIP-II, huyện Bắc Tân Uyên, tỉnh Bình Dương
+														tr
+															td Chủ đầu tư
+															td Uniben
+														tr
+															td Vùng miền
+															td Miền Nam
+														tr
+															td Thời gian thi công
+															td 06 tháng
+														tr
+															td Vai trò
+															td Tổng thầu thi công
+														tr
+															td Năm
+															td 2018
+														tr
+															td Hạng mục thi công
+															td Xưởng chính, văn phòng, hạng mục phụ trợ
+														tr
+															td Tổng giá trị
+															td 150 tỷ đồng
+												#tab-2.wrap-content.tab-pane
+													.slide-detail
+														.swiper-container.gallery-top
+															.swiper-wrapper
+																-for(n=1; n<6; n++)
+																	.swiper-slide
+																		.img
+																			img.lazyload(data-src="./img/du-an/project-"+n+".png" alt="")
+														.swiper-container.gallery-thumbs
+															.swiper-wrapper
+																-for(x=1; x<6; x++)
+																	.swiper-slide
+																		.img
+																			img.lazyload(data-src="./img/du-an/project-"+x+".png" alt="")
+														//- .swiper-button-next
+														//- .swiper-button-prev
 		.wrapper-content#panel-2.panel
 			.container
 				.filter-wrapper.d-flex.align-center

@@ -35,11 +35,11 @@ function mainMenu() {
 function listBanerSlide() {
 	var myswiper = new Swiper(".home-banner .swiper-container", {
 		loop: false,
-		speed: 2000,
+		speed: 2500,
 		effect: "fade",
 		grabCursor: true,
 		autoplay: {
-			delay: 3000,
+			delay: 5000,
 			disableOnInteraction: false,
 		},
 		fadeEffect: {
@@ -176,15 +176,32 @@ function listBanerSlide() {
 			.find(".swiper-pagination")
 			.addClass("swiper-pagination-" + index);
 		var galleryThumbs = new Swiper(".instance-gallery-thumbs-" + index, {
+			direction: 'vertical',
 			spaceBetween: 30,
-			slidesPerView: 5,
-			loop: true,
+			slidesPerView: 4,
+			loop: false,
 			freeMode: true,
-			loopedSlides: 5,
+			loopedSlides: 4,
 			watchSlidesVisibility: true,
 			watchSlidesProgress: true,
 			observer: true,
 			observeParents: true,
+			breakpoints: {
+				991: {
+					slidesPerView: 4,
+					spaceBetween: 20,
+				},
+				767: {
+					slidesPerView: 4,
+					spaceBetween: 20,
+					direction: 'horizontal',
+				},
+				375: {
+					slidesPerView: 4,
+					spaceBetween: 20,
+					direction: 'horizontal',
+				},
+			},
 		});
 		var galleryTop = new Swiper(".instance-gallery-top-" + index, {
 			observer: true,
@@ -201,6 +218,65 @@ function listBanerSlide() {
 			},
 		});
 
+	});
+	var swiper = new Swiper(".slide-other .swiper-container", {
+		slidesPerView: 4,
+		spaceBetween: 30,
+		observer: true,
+		observeParents: true,
+		loop: true,
+		navigation: {
+			nextEl: ".slide-other .swiper-button-next",
+			prevEl: ".slide-other .swiper-button-prev",
+		},
+		breakpoints: {
+			1200: {
+				slidesPerView: 4,
+				spaceBetween: 30,
+			},
+			991: {
+				slidesPerView: 3,
+				spaceBetween: 30,
+			},
+			575: {
+				slidesPerView: 2,
+				spaceBetween: 15,
+			},
+			375: {
+				slidesPerView: 1,
+				spaceBetween: 10,
+			},
+			320: {
+				slidesPerView: 1,
+				spaceBetween: 10,
+			},
+		},
+	});
+	var galleryThumbsNews = new Swiper(".slide-gallery .gallery-thumbs", {
+		spaceBetween: 20,
+		slidesPerView: 5,
+		freeMode: true,
+		loopedSlides: 5,
+		watchSlidesVisibility: true,
+		watchSlidesProgress: true,
+		breakpoints: {
+			767: {
+				slidesPerView: 4,
+			},
+			991: {
+				slidesPerView: 5,
+			},
+		},
+	});
+	var galleryTopNews = new Swiper('.slide-gallery .gallery-top', {
+		spaceBetween: 10,
+		navigation: {
+			nextEl: '.slide-gallery .swiper-button-next',
+			prevEl: '.slide-gallery .swiper-button-prev',
+		},
+		thumbs: {
+			swiper: galleryThumbsNews
+		}
 	});
 }
 
@@ -260,7 +336,7 @@ function setBackgroundElement() {
 
 function projectDetail() {
 	$('.project-item').on('click', function (e) {
-		let $paddingtop = $(this).next().outerHeight();
+		let $paddingtop = $('.project-item-col .project-detail').outerHeight();
 		let $detailbox = $(this).next();
 		$detailbox.toggleClass('active');
 		$('.project-item-col').find('.arrow').slideToggle();
@@ -274,21 +350,31 @@ function projectDetail() {
 		$('.project-item-col .project-item').not(this).next().removeClass('active');
 		$('.project-item-col .project-item').not(this).parent('.project-item-col').css('padding-bottom', 0);
 		$('.project-item-col .project-item').not(this).parent('.project-item-col').find('.arrow').css('display', 'none');
-		$(".tabs-detail > li").on("click", function () {
-			let $panel = $(this).closest(".list-tabs");
-			$panel.find("li.active").removeClass("active");
-			$(this).addClass("active");
-			let panelToShow = $(this).attr("rel");
-			$panel.find(".project.active").fadeOut(300, showNextPanel);
+		var theTabs = $(".nav-tabs li");
+		var i;
 
-			function showNextPanel() {
-				$(this).removeClass("active");
-				$("#" + panelToShow).fadeIn(300, function () {
-					$(this).addClass("active").fadeIn(300);
-				});
+		function theTabClicks(tabClickEvent) {
+			var clickedTab = tabClickEvent.currentTarget;
+			var tabParent = tabClickEvent.currentTarget.parentNode.parentNode.parentNode;
+			var theTabs = tabParent.querySelectorAll(".nav-tabs li");
+			for (var i = 0; i < theTabs.length; i++) {
+				theTabs[i].classList.remove("active");
 			}
-		});
-		e.stopPropagation();
+
+			clickedTab.classList.add("active");
+			tabClickEvent.preventDefault();
+			var contentPanes = tabParent.querySelectorAll(".tab-pane");
+			for (i = 0; i < contentPanes.length; i++) {
+				contentPanes[i].classList.remove("active");
+			}
+			var anchorReference = tabClickEvent.target;
+			var activePaneId = anchorReference.getAttribute("href");
+			var activePane = tabParent.querySelector(activePaneId);
+			activePane.classList.add("active");
+		}
+		for (i = 0; i < theTabs.length; i++) {
+			theTabs[i].addEventListener("click", theTabClicks)
+		}
 	});
 	$('.project-item-col').find('.close ').on('click', function () {
 		$('.project-item-col').find('.project-detail').removeClass('active');
@@ -298,7 +384,22 @@ function projectDetail() {
 	});
 }
 
+function phantrang() {
+	$('.modulepager').find('.pagination').find('li>a.NextPage, li>a.LastPage, li>a.BackPage, li>a.FirstPage').parent().hide()
+}
+
+function Showmap() {
+	$('.contact').find('.item').click(function () {
+		$(this).addClass('active');
+		var datahref = $(this).attr('data-href');
+		$('.show-map').find('iframe').attr('src', function () {
+			return datahref;
+		})
+		$('.contact').find('.item').not(this).removeClass('active')
+	});
+}
 $(document).ready(function () {
+
 	initMapping();
 	mainMenu();
 	listBanerSlide();
@@ -306,6 +407,22 @@ $(document).ready(function () {
 	tabs();
 	setBackgroundElement();
 	projectDetail();
+	Showmap();
+	phantrang();
+	$(function () {
+		var $refreshButton = $('#refresh');
+		var $results = $('#css_result');
 
+		function refresh() {
+			var css = $('style.cp-pen-styles').text();
+			$results.html(css);
+		}
 
+		refresh();
+		$refreshButton.click(refresh);
+
+		$results.click(function () {
+			$(this).select();
+		});
+	});
 });

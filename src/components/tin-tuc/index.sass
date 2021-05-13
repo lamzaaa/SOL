@@ -1,13 +1,133 @@
 .news-list
 	.big-img
 		margin-bottom: 30px
-		background-color: #f5f5f5
 		.img
 			a
-				+img-ratio(410/615)
+				+img-ratio(400/765)
 		.content
 			padding-top: 57px
-			padding-left: 45px
+			padding-left: 30px
 			padding-right: 37px
 			.title
 				letter-spacing: -0.5px
+			.desc
+				font-size: 1rem
+				line-height: 30px
+				font-weight: 300
+				color: $gray
+			.btn-viewmore
+				padding-top: 10px
+		&:hover
+			.title
+				text-decoration: underline
+		&:nth-child(2n)
+			.col-lg-7
+				order: 2
+			.col-lg-5
+				.content
+					padding-left: 0
+
+	@media screen and ( max-width: 1199.98px )
+		.big-img
+			.content
+				padding-top: 30px
+				.title
+					a
+						font-size: 18/16*1rem
+	@media screen and ( max-width: 991.98px )
+		.main-title
+			padding-bottom: 15px
+		.big-img
+			.img
+				height: 100%
+				a
+					height: 100%
+			.content
+				padding: 0
+	@media screen and ( max-width: 767.98px )
+		.big-img
+			.img
+				height: auto
+				margin-bottom: 20px
+			&:nth-child(2n)
+				.col-lg-7
+					order: 1
+				.col-lg-5
+					order: 2
+
+.news-detail
+	padding-top: 0
+	.title
+		line-height: 48px
+	.full-content
+		padding-top: 30px
+		p
+			font-size: 1rem
+			color: $gray
+			line-height: 30px
+			font-weight: 300
+			padding-bottom: 30px
+		.slide-gallery
+			position: relative
+			max-width: 1020px
+			.gallery-top
+				margin-bottom: 20px
+				.img
+					+img-ratio(650/1020)
+			.gallery-thumbs
+				.swiper-slide
+					.img
+						transition: all .5s ease-in-out
+						border: solid 1px transparent
+						+img-ratio(110/180)
+				.swiper-slide
+					&-thumb-active
+						.img
+							border: solid 1px $red
+			.swiper-button-next,
+			.swiper-button-prev
+				top: 95%
+			.swiper-button-next
+				right: -65px
+			.swiper-button-prev
+				left: -65px
+
+	@media screen and ( max-width: 1199.98px )
+		.title
+			line-height: 35px
+		.full-content
+			padding-top: 20px
+			p
+				padding-bottom: 20px
+
+.news-other
+	background-color: #f5f5f5
+	.slide-other
+		position: relative
+		.item
+			.img
+				a
+					+img-ratio(190/285)
+			.content
+				padding-top: 10px
+				padding-bottom: 58px
+				.title
+					height: 90px
+			&:hover
+				.title
+					text-decoration: underline
+		.swiper-button-next
+			right: -75px
+		.swiper-button-prev
+			left: -75px
+		.swiper-button-next,
+		.swiper-button-prev
+			transition: all .5s
+			&:hover
+				background-color: $main
+	@media screen and ( max-width: 1024.98px )
+		.slide-other
+			.swiper-button-next
+				right: 0
+			.swiper-button-prev
+				left: 0

@@ -1,0 +1,9 @@
+extends _layout.pug
+
+block var
+	- var title = 'Dự án'
+	- var bodyClass = ''
+
+block main
+	include ../components/_global/breadcrumb.pug
+	include ../components/khach-hang/khach-hang.pug

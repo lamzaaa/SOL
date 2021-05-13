@@ -1,17 +1,71 @@
 section.kv-section.home-project
 	.container
 		.main-title.color-main dự án nổi bật
-		.wrapper-slider
-			.swiper-container.column-slide
-				.swiper-wrapper
-					-for(i=1; i<7; i++)
-						.swiper-slide
-							.project-item
-								.img
-									a(href="")
-										img.lazyload(data-src="./img/index/project-"+i+".png", alt="")
-								.content.d-flex.align-center
-									a(href="").text.f-30.fw-700.color-white.text-center HADO CENTROSA GARDEN
-			.swiper-button-next
-			.swiper-button-prev
-			.swiper-pagination
+		.row
+			-for(i=1; i<7; i++)
+				.col-lg-4.col-md-4
+					.project-item-col
+						.project-item
+							.img
+								a(href="javascript:;")
+									img.lazyload(data-src="./img/index/project-1.png" alt="")
+							.content.d-flex.align-center
+								a(href="javascript:;").text.f-30.fw-700.color-white.text-center HADO CENTROSA GARDEN
+							.arrow
+						.project-detail
+							.container
+								.main-title.color-main uniben
+								.container--tabs
+									ul.nav.nav-tabs
+										li.active
+											a(href='#tab-1') Tab 1
+										li
+											a(href='#tab-2') Tab 2
+										.close Đóng
+									.tab-content
+										#tab-1.wrap-content.tab-pane.active
+											table
+												tr
+													td Tên dự án
+													td Nhà máy Uniben Bình Dương
+												tr
+													td Loại hình
+													td Nhà xưởng công nghiệp
+												tr
+													td Địa điểm
+													td Số 32, đường số 30, KCN VSIP-II, huyện Bắc Tân Uyên, tỉnh Bình Dương
+												tr
+													td Chủ đầu tư
+													td Uniben
+												tr
+													td Vùng miền
+													td Miền Nam
+												tr
+													td Thời gian thi công
+													td 06 tháng
+												tr
+													td Vai trò
+													td Tổng thầu thi công
+												tr
+													td Năm
+													td 2018
+												tr
+													td Hạng mục thi công
+													td Xưởng chính, văn phòng, hạng mục phụ trợ
+												tr
+													td Tổng giá trị
+													td 150 tỷ đồng
+										#tab-2.wrap-content.tab-pane
+											.slide-detail
+												.swiper-container.gallery-top
+													.swiper-wrapper
+														-for(n=1; n<6; n++)
+															.swiper-slide
+																.img
+																	img.lazyload(data-src="./img/du-an/project-"+n+".png" alt="")
+												.swiper-container.gallery-thumbs
+													.swiper-wrapper
+														-for(x=1; x<6; x++)
+															.swiper-slide
+																.img
+																	img.lazyload(data-src="./img/du-an/project-"+x+".png" alt="")

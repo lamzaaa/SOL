@@ -41,5 +41,8 @@
 		"remixicon": "^2.5.0",
 		"swiper": "^6.3.5",
 		"vendors": "^1.0.4"
+	},
+	"devDependencies": {
+		"video.js": "^7.10.2"
 	}
 }

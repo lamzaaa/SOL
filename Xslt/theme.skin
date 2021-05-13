@@ -14,8 +14,8 @@
 <portal:BannerDisplaySettings runat="server" 
 	ShowDescription="true"
     DescriptionControlType="editor"
-    ShowThumbnail="false"
-    ThumbnailWidth="100"
+    ShowThumbnail="true"
+    ThumbnailWidth="150"
     ImageWidth="150"
 	/>
 <portal:NewsDisplaySettings runat="server" 

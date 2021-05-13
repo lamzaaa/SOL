@@ -1,0 +1,41 @@
+.partner-list
+	padding-top: 0
+	.list-tabs
+		.tabs
+			@media screen and ( max-width: 1199.98px )
+				.item
+					padding: 0 20px
+			@media screen and ( max-width: 991.98px )
+				display: none
+				.item
+					&::before
+						display: none
+		.wrapper-content
+			padding-top: 30px
+			.list-partner
+				flex-wrap: wrap
+				flex-direction: row
+				.col
+					flex: 0 1 20%
+					padding: 0 15px
+					.item
+						width: 100%
+						height: 100px
+						display: flex
+						align-items: center
+						justify-content: center
+						cursor: pointer
+						img
+							width: 100%
+							height: 100%
+							object-fit: contain
+							padding: 15px
+				@media screen and ( max-width: 991.98px )
+					.col
+						flex: 0 1 25%
+				@media screen and ( max-width: 767.98px )
+					.col
+						flex: 0 1 33.333%
+				@media screen and ( max-width: 375.98px )
+					.col
+						flex: 0 1 50%

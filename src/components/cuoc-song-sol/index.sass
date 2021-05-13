@@ -54,17 +54,11 @@
 				align-items: center
 				.img
 					width: 120px
-					height: 70px
-					display: flex
-					align-items: center
-					justify-content: center
 					border-radius: 5px
-					padding: 20px
-					border: solid 1px #e5e5e5
 					a
 						img
 							width: 100%
-							object-fit: contain
+							border-radius: 5px
 				.content
 					width: calc( 100% - 120px )
 					padding-left: 20px
@@ -90,7 +84,7 @@
 							&.hot
 								background-color: #ff0000
 							&.new
-								background-color: #f7a334
+								background-color: #08c211
 							&.deadline
 								background-color: #19407d
 				&::after
@@ -119,46 +113,6 @@
 	padding-top: 0
 	.title
 		line-height: 48px
-	.bottom-wrapper
-		width: 100%
-		border-bottom: 1px solid #e1e1e1
-		.social
-			display: flex
-			list-style: none
-			padding: 0
-			padding-bottom: 10px
-			li
-				width: 40px
-				height: 40px
-				border-radius: 50%
-				display: flex
-				align-items: center
-				justify-content: center
-				margin-left: 10px
-				transition: all .9s
-
-				a
-					em
-						font-size: 24px
-						font-weight: 900
-				&:first-child
-					border: solid 1px #38569a
-					a
-						em
-							color: #38569a
-				&:last-child
-					border: solid 1px #0a66c2
-					a
-						em
-							color: #0a66c2
-				&:hover
-					&:first-child
-						background-color: #38569a
-					&:last-child
-						background-color: #0a66c2
-					a
-						em
-							color: $white
 	.full-content
 		display: flex
 		margin-bottom: 40px
@@ -167,17 +121,20 @@
 			table
 				width: 100%
 				tr
+					height: 50px
 					td
-						line-height: 50px
+						line-height: 30px
 						&:first-child
 							color: $gray
 							font-weight: 700
 							font-size: 1rem
-							padding-right: 20px
-							white-space: nowrap
+							display: flex
+							width: 100px
+							
 						&:last-child
-							padding-left: 30px
+							padding-left: 50px
 							color: #666666
+							vertical-align: top
 					&:nth-child(even)
 						background-color: #f5f5f5
 
@@ -190,25 +147,14 @@
 			.title
 				line-height: 48px
 			ul
-				list-style: none
 				padding: 0
+				padding-left: 20px
 				li
 					position: relative
-					padding-left: 20px
 					p
 						line-height: 30px
 						font-weight: 300
 						font-size: 1rem
-						color: $gray
-					&::before
-						position: absolute
-						top: 50%
-						left: 0
-						transform: translateY(-50%)
-						content: 'fiber_manual_record'
-						font-family: Material Icons
-						font-size: 7px
-						line-height: 10px
 						color: $gray
 	.box-apply
 	.recuirement-other
@@ -228,7 +174,7 @@
 					transition: all .5s
 				&:hover
 					.title
-						color: $red
+						color: $main
 						font-weight: 700
 	@media screen and ( max-width: 1199.98px )
 		.full-content

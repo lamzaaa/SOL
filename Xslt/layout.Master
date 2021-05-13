@@ -25,15 +25,26 @@
 
 	<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
 
+
 	<!--*********************************************************************************************-->
 	<!-- Canh Cam - the best Web Solutions Provider - http://www.canhcam.vn                          -->
 	<!-- 156 Nguyen Van Thu, District 1, Ho Chi Minh City, Viet Nam.                                 -->
 	<!-- Phone: (+84) 8 38238364 – Fax: (+84) 8 38238365 - Email: info@canhcam.vn                    -->
 	<!-- Facebook: https://www.facebook.com/canhcam.vn                                               -->
 	<!--*********************************************************************************************-->
+
+	<!-- <style>
+		body.homepage {
+			display: block;
+		}
+
+	</style> -->
+
 </head>
 
-<body id="Body" runat="server" class="canhcam">
+
+<body id="Body" runat="server" class="canhcam" style="display:none; ">
+
 	<portal:FacebookSdk ID="fbsdk" runat="server" />
 	<portal:LayoutDisplaySettings ID="LayoutDisplaySettings1" runat="server" />
 	<form id="frmMain" runat="server">
@@ -105,13 +116,13 @@
 							<div class="col-lef">
 								<div class="footer-card">
 									<portal:ModuleWrapper ID="mdl212" runat="server" ConfigureModuleId="212" />
-									
+
 								</div>
 								<div id="footer-card"></div>
 								<div class="footer-card">
 									<portal:ModuleWrapper ID="mdl213" runat="server" ConfigureModuleId="213" />
-									
-									
+
+
 								</div>
 							</div>
 						</div>
@@ -119,25 +130,25 @@
 							<div class="col-right">
 								<div class="footer-card">
 									<portal:ModuleWrapper ID="mdl214" runat="server" ConfigureModuleId="214" />
-									
+
 									<portal:ModuleWrapper ID="mdl215" runat="server" ConfigureModuleId="215" />
-									
+
 								</div>
 							</div>
 							<portal:ModuleWrapper ID="mdl216" runat="server" ConfigureModuleId="216" />
-							
+
 						</div>
 					</div>
 					<div class="coppyright">
 						<div class="row">
 							<div class="col-lg-5">
 								<portal:ModuleWrapper ID="mdl217" runat="server" ConfigureModuleId="217" />
-								
+
 							</div>
 							<div class="col-lg-7">
 								<div class="list-item align-center justify-end">
 									<portal:ModuleWrapper ID="mdl219" runat="server" ConfigureModuleId="219" />
-									
+
 								</div>
 							</div>
 						</div>
@@ -331,7 +342,6 @@
 			'https://cdn.jsdelivr.net/npm/@mdi/font@5.8.55/css/materialdesignicons.min.css',
 			'https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css',
 			'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap',
-			'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css',
 			'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css',
 		], function () {});
 
@@ -341,9 +351,50 @@
 			'https://code.jquery.com/jquery-3.5.1.min.js',
 			'/Data/Sites/1/skins/default/js/plugins.min.js',
 			'/Data/Sites/1/skins/default/js/main.min.js',
-			'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js',
-
+			'/Data/Sites/1/skins/default/js/ecommerce.js',
 		], function () {});
+
+	</script>
+
+	<div class="loading-page" style="display:none; "> 
+		<img data-src="/Data/Sites/1/skins/default/img/SOL-7.gif" alt="" class="lazyload">
+	</div>
+	<script>
+		$(document).ready(function () {
+			if (!(document.cookie.indexOf("popupOnce") > -1)) {
+				$('.loading-page').show();
+				$('.loading-page').delay(2300).fadeOut(); 
+				$('body').css({
+					display: "block"
+				});
+				createCookie('popupOnce', "1", 1);
+			} 
+			else {
+				$('body').css({
+					display: "block"
+				});
+			}
+		})
+
+		function createCookie(name, value, days) {
+			if (days) {
+				var date = new Date();
+				date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+				var expires = "; expires=" + date.toGMTString();
+			} else var expires = "";
+			document.cookie = name + "=" + value + expires + "; path=/";
+		}
+
+		function readCookie(name) {
+			var nameEQ = name + "=";
+			var ca = document.cookie.split(';');
+			for (var i = 0; i < ca.length; i++) {
+				var c = ca[i];
+				while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+				if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+			}
+			return null;
+		}
 
 	</script>
 </body>

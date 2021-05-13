@@ -1,0 +1,59 @@
+section.kv-section.news-detail
+	.container
+		.title.f-24.fw-700.color-main SOL áp dụng công nghệ chống thấm POLYUREA tại công trường trọng điểm
+		.bottom-wrapper.d-flex.align-center.justify-between
+			time 22/10/2020
+			ul.social
+				li
+					a(href="")
+						em.ri-facebook-fill
+				li
+					a(href="")
+						em.ri-linkedin-box-fill
+		.full-content
+			p Quý 1/2019 chuẩn bị kết thúc, cùng lúc với Khối Thi công của SOL tăng tốc hoàn thiện các hạng mục thi công Chống thấm tại các Công trình trọng điểm trên cả nước: VinCity (TP. HCM và Hà Nội), Tây Hồ View (Hà Nội), Vinhomes Metropolis (Hà Nội), Pull Man (Hải Phòng), Nhà xưởng Timberland Manwah (Bình Dương), Casino Nam Hội An, Imperia (Hải Phòng), Kingdoom (TP.HCM) v.v. Mặc dù thời tiết nắng nóng tại miền Nam, nhiệt độ thay đổi tại miền Bắc và khô rát tại miền Trung, nhưng anh em SOL vẫn đảm bảo thi công an toàn, chất lượng và đúng tiến độ của công trường.
+
+			p Tại công trường Casino Nam Hội An, SOL đã áp dụng công nghệ phun chống thấm mới nhất Polyurea. Chống thấm Polyurea có ưu điểm thời gian đông đặc rất ngắn, tạo màng và chịu mài mòn tốt và cường độ bám dính tốt, và đặc biệt thân thiện với môi trường theo tiêu chuẩn VOC.
+
+			p Bằng việc áp dụng các biện pháp tiên tiến, vật liệu chống thấm trên cơ sở máy móc hiện đại, Khối Thi công SOL đã cải tiến không ngừng phương pháp thi công mang tới những lợi ích tối ưu và thiết thực cho Công trường. Các hạng mục thi công SOL cung cấp bao gồm: Thi công Chống thấm; Thi công Sơn epoxy; Thi công Sàn Harderner; Thi công Sàn gỗ; Thi công Ốp lát đá; Sửa chữa bê tông; Bảo trì, Sửa chữa,…
+			p Một số hình ảnh thi công:
+			p(style="text-align: center;")
+				img.lazyload(data-src="./img/tin-tuc/detail-1.png" alt="")
+			p(style="text-align: center;")
+				img.lazyload(data-src="./img/tin-tuc/detail-2.png" alt="")
+			p(style="text-align: center;")
+				img.lazyload(data-src="./img/tin-tuc/detail-3.png" alt="")
+			p Một số hình ảnh khác
+			.slide-gallery.mx-auto
+				.swiper-container.gallery-top
+					.swiper-wrapper
+						-for(n=1; n<4; n++)
+							.swiper-slide
+								a(href="").img
+									img.lazyload(src="./img/tin-tuc/detail-"+n+".png" alt="")
+				.swiper-container.gallery-thumbs
+					.swiper-wrapper
+						-for(x=1; x<4; x++)
+							.swiper-slide
+								a(href="").img
+									img.lazyload(data-src="./img/tin-tuc/detail-"+x+".png" alt="")
+				.swiper-button-next
+				.swiper-button-prev
+section.kv-section.news-other
+	.container
+		.main-title.color-main tin tức khác
+		.slide-other
+			.swiper-container
+				.swiper-wrapper
+					-for(i=1; i<5; i++)
+						.swiper-slide
+							.item.zoom-img
+								.img
+									a(href="tin-tuc-chi-tiet.html")
+										img.lazyload(data-src="./img/tin-tuc/item-"+i+".png" alt="")
+								.content
+									.title
+										a.fw-800.f-20.line-30.color-main.lcl.lcl-3(href="tin-tuc-chi-tiet.html") SOL trúng thầu loạt dự án lớn tại với tổng giá trị gói thầu hơn 2000 tỷ đồng
+									time 22/10/2021
+			.swiper-button-next
+			.swiper-button-prev

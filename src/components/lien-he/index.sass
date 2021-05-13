@@ -1,0 +1,34 @@
+.contact
+	padding-top: 0
+	.item
+		padding: 15px
+		cursor: pointer
+		background-color: $white
+		transition: all 1s cubic-bezier(.22, .44, 0, 1)
+		.title
+			line-height: 30px
+			padding-bottom: 15px
+		.text
+			display: flex
+			align-items: flex-start
+			color: $gray
+			font-size: 18/16*1rem
+			line-height: 28px
+			font-weight: 300
+			padding-bottom: 10px
+			img
+				padding-right: 10px
+				line-height: 28px
+		&:hover
+			box-shadow: 0 0 11px rgba(33,33,33,.2)
+		&.active
+			box-shadow: 0 0 11px rgba(33,33,33,.2)
+	.show-map
+		margin-top: 30px
+		margin-bottom: 30px
+		+img-ratio(630/1230)
+	.wrapper-contact-form
+		max-width: 1020px
+		margin: 0 auto
+		.desc
+			margin-bottom: 25px

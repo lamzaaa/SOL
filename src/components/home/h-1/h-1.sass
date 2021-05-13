@@ -77,6 +77,12 @@
 					bottom: -21px
 					left: 11px
 					content: url('../img/icon/shadow-2.png')
+	.col-video
+		.ModuleContent
+			+img-ratio(450/735)
+			video
+				width: 100%
+				height: 100%
 	.col-right-mobile
 		.item
 			margin-top: 30px
@@ -114,3 +120,22 @@
 	@media screen and ( max-width: 767px)
 		.col-right
 			display: none
+.home-news-specail
+	padding-top: 20px
+	.news-item
+		.img
+			position: relative
+			margin-bottom: 12px
+			a
+				+img-ratio(166/270)
+			.hot-news
+				position: absolute
+				top: 10px
+				left: 10px
+				line-height: 20px
+				padding: 2px 8px
+				border-radius: 4px
+				background-color: #f7a334
+				text-align: center
+		@media screen and ( max-width: 767.98px )
+			margin-bottom: 30px

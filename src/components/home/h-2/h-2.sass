@@ -1,29 +1,13 @@
 .home-project
-	.wrapper-slider
-		position: relative
-		.column-slide
-			.swiper-slide
-				margin-bottom: 30px
-			.project-item
-				.img
-					position: relative
-					overflow: hidden
-					+img-ratio(255/390)
-					img
-						transform: scale(1)
-						transition: all .8s cubic-bezier(.22, .44, 0, 1)
-				.content
-					position: absolute
-					top: 50%
-					left: 50%
-					width: 100%
-					opacity: 0
-					visibility: hidden
-					z-index: 2
-					transform: translate(-50%, -50%)
-					transition: all 1s cubic-bezier(.22, .44, 0, 1)
-					.text
-						width: 100%
+	.col-lg-4
+		position: static
+		.project-item
+			position: relative
+			margin-bottom: 30px
+			.img
+				position: relative
+				overflow: hidden
+				+img-ratio(255/390)
 				&::after
 					position: absolute
 					pointer-events: none
@@ -35,43 +19,144 @@
 					background-color: rgba($color: $black, $alpha: .6)
 					transform: translate(-50%, -50%)
 					transition: all .8s cubic-bezier(.22, .44, 0, 1)
-				@media screen and ( min-width: 1024.98px)
-					&:hover
+			.content
+				position: absolute
+				top: 50%
+				left: 50%
+				width: 100%
+				opacity: 0
+				visibility: hidden
+				z-index: 2
+				transform: translate(-50%, -50%)
+				transition: all 1s cubic-bezier(.22, .44, 0, 1)
+				.text
+					width: 100%
+			.arrow
+				content: ""
+				position: absolute
+				border-style: solid
+				border-width: 0 20px 20px 20px
+				border-color: $main transparent
+				width: 0
+				z-index: 10
+				margin-top: 10px
+				left: 50%
+				transform: translateX(-50%)
+				display: none
+			@media screen and ( min-width: 1024.98px)
+				&:hover
+					.img
 						&::after
 							width: 100%
 							height: 100%
-						.img
-							img
-								transform: scale(1.05)
-						.content
-							opacity: 1
-							visibility: visible
-		.swiper-button-next
-			right: -75px
-		.swiper-button-prev
-			left: -75px
-		@media screen and ( max-width: 575.98px)
-			.column-slide
-				.project-item
 					.content
-						position: static
 						opacity: 1
 						visibility: visible
-						transform: unset
-						background-color: $opacity
-						padding: 15px 0
-			.swiper-button-next,
-			.swiper-button-prev
-				display: none
-		.swiper-pagination
-			width: auto !important
-			bottom: 10px
-			left: 50%
-			transform: translateX(-50%)
-			&-bullet
-				width: 15px
-				height: 15px
-				&-active
-					background-color: $main
-			@media screen and ( min-width: 576px)
-				display: none
+		.project-detail
+			position: absolute
+			left: 0
+			width: 100%
+			background-color: #f5f5f5
+			z-index: 10
+			margin-top: 0
+			padding: 60px 0
+			display: none
+			.main-title
+				font-size: 24/16*1rem
+				padding-bottom: 0
+			.container--tabs
+				margin: 0
+			.wrap-content
+				width: 100%
+				height: auto
+				margin-top: 30px
+				padding: 30px
+				background-color: $white
+				box-shadow: 0 0 11px rgba(33,33,33,.2)
+				table
+					width: 100%
+					tr
+						border-bottom: solid 1px #e0e0e0
+						td
+							line-height: 50px
+							&:first-child
+								font-size: 1rem
+								color: $gray
+						&:last-child
+							border: none
+				@media screen and ( max-width: 991.98px )
+					table
+						tr
+							td
+								line-height: 40px
+								height: auto
+				@media screen and ( max-width: 767.98px )
+					padding: 15px 30px
+					height: auto
+					table
+						tr
+							td
+								line-height: 30px
+								&:first-child
+									width: 50%
+				.slide-detail
+					position: relative
+					display: flex
+					width: 100%
+					height: 530px
+					.gallery-top
+						width: 80%
+						height: 100%
+						margin-right: 10px
+						.img
+							width: 100%
+							height: 100%
+							cursor: pointer
+							img
+								width: 100%
+								height: 100%
+								object-fit: contain
+					.gallery-thumbs
+						width: 20%
+						height: 100%
+						.img
+							width: 100%
+							height: 100%
+							cursor: pointer
+							img
+								width: 100%
+								height: 100%
+								object-fit: contain
+						.swiper-slide
+							.img
+								border: solid 1px transparent
+							&-thumb
+								&-active
+									.img
+										border: solid 1px $red
+					.swiper-button-next,
+					.swiper-button-prev
+						right: 80px
+					.swiper-button-next
+						top: -35px
+						&::after
+							transform: rotate(-90deg)
+					.swiper-button-prev
+						left: unset
+						top: unset
+						bottom: -107px
+						&::after
+							transform: rotate(-90deg)
+					@media screen and ( max-width: 991.98px )
+						height: auto
+						display: block
+						.gallery-top
+							width: 100%
+							margin-right: 0
+							margin-bottom: 20px
+							.img
+								+img-ratio(415/630)
+						.gallery-thumbs
+							width: 100%
+							.img
+								+img-ratio(95/140)

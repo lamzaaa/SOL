@@ -5,7 +5,7 @@
         <xsl:apply-templates select="News"></xsl:apply-templates>
     </xsl:template>
     <xsl:template match="News">
-        <div class="wrap-img">
+        <!-- <div class="wrap-img">
             <div class="img">
                 <img class="lazyload">
                     <xsl:attribute name="data-src">
@@ -16,10 +16,10 @@
                     </xsl:attribute>
                 </img>
             </div>
-        </div>
+        </div> -->
         <div class="wrap-content">
-            <xsl:value-of select="BriefContent" disable-output-escaping="yes"></xsl:value-of>
-			<xsl:value-of select="EditLink" disable-output-escaping="yes"></xsl:value-of>
+            <xsl:value-of select="FullContent" disable-output-escaping="yes"></xsl:value-of>
+            <xsl:value-of select="EditLink" disable-output-escaping="yes"></xsl:value-of>
         </div>
     </xsl:template>
 </xsl:stylesheet>

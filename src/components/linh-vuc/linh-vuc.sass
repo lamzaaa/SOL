@@ -1,35 +1,45 @@
 .field-page
-	border-top: solid 2px #dedede
+	padding-top: 0
+	.tab-panels
+		@media screen and ( max-width: 575.98px )
+			.tabs
+				display: flex
+				.item
+					&::before
+						display: block
 	.wrapper-content
-		p
-			font-size: 1rem
-			font-weight: 300
-			line-height: 30px
-			color: $gray
-			letter-spacing: -0.5px
-			padding-bottom: 10px
-			img
-				margin-bottom: 15px
-			strong
-				font-weight: 700
+		border-top: solid 2px #dedede
+		padding-top: 50px
+		.full-content
+			p
 				font-size: 1rem
-				color: $main
-				line-height: 24px
-				text-transform: uppercase
-		ol
-			padding-left: 15px
-			padding-bottom: 10px
-			li
+				font-weight: 300
 				line-height: 30px
 				color: $gray
-				font-weight: 300
 				letter-spacing: -0.5px
-		@media screen and ( max-width: 1199.98px)
-			p,
-			ol
-				padding-bottom: 5px
-			p
-				line-height: 24px
-			ol
-				li
+				padding-bottom: 10px
+				img
+					margin-bottom: 15px
+				strong
+					font-weight: 700
+					font-size: 1rem
+					color: $main
 					line-height: 24px
+					text-transform: uppercase
+			ol
+				padding-left: 15px
+				padding-bottom: 10px
+				li
+					line-height: 30px
+					color: $gray
+					font-weight: 300
+					letter-spacing: -0.5px
+			@media screen and ( max-width: 1199.98px)
+				p,
+				ol
+					padding-bottom: 5px
+				p
+					line-height: 24px
+				ol
+					li
+						line-height: 24px

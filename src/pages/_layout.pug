@@ -10,35 +10,73 @@ html(lang="en")
 		meta(http-equiv="X-UA-Compatible" content="ie=edge")
 		link(rel="stylesheet" href="./css/main.min.css")
 		title #{title}
+		script(src="https://code.jquery.com/jquery-3.5.1.min.js")
+		script.
+			$(document).ready(function () {
+				if (!(document.cookie.indexOf("popupOnce") > -1)) {
+					$('.loading-page').show();
+					$('.loading-page').delay(1500).fadeOut();
+					$('body').css({
+						display: "block"
+					});
+					createCookie('popupOnce', "1", 1);
+				} else {
+					$('body').css({
+						display: "block"
+					});
+				}
+			})
 
+			function createCookie(name, value, days) {
+				if (days) {
+					var date = new Date();
+					date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+					var expires = "; expires=" + date.toGMTString();
+				} else var expires = "";
+				document.cookie = name + "=" + value + expires + "; path=/";
+			}
+
+			function readCookie(name) {
+				var nameEQ = name + "=";
+				var ca = document.cookie.split(';');
+				for (var i = 0; i < ca.length; i++) {
+					var c = ca[i];
+					while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+					if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+				}
+				return null;
+			}
+		style.
+			body.homepage{
+				display: none;
+			}
 	body(class=bodyClass)
+		//- .loading-page
+		//- 	img(src="./img/SOL-7.gif" alt="")
 		block header
 			include ../components/_global/header/header.pug
 		main
 			block main
 		block footer
 			include ../components/_global/footer/footer.pug
-		//- include ../components/_global/tool.pug
-		//- #to-top
-		//- 	img(src="./img/icons/gototop.png" alt="")
-		//- 	|top
-		//- #facebook
-		//- 	img(src="./img/icons/facebook.png" alt="")
-		#overlay
-		script.
-			LazyLoad=function(doc){var env,head,pending={},pollCount=0,queue={css:[],js:[]},styleSheets=doc.styleSheets;function createNode(name,attrs){var node=doc.createElement(name),attr;for(attr in attrs)attrs.hasOwnProperty(attr)&&node.setAttribute(attr,attrs[attr]);return node}function finish(type){var p=pending[type],callback,urls;p&&(callback=p.callback,(urls=p.urls).shift(),pollCount=0,urls.length||(callback&&callback.call(p.context,p.obj),pending[type]=null,queue[type].length&&load(type)))}function getEnv(){var ua=navigator.userAgent;((env={async:!0===doc.createElement("script").async}).webkit=/AppleWebKit\//.test(ua))||(env.ie=/MSIE|Trident/.test(ua))||(env.opera=/Opera/.test(ua))||(env.gecko=/Gecko\//.test(ua))||(env.unknown=!0)}function load(type,urls,callback,obj,context){var _finish=function(){finish(type)},isCSS="css"===type,nodes=[],i,len,node,p,pendingUrls,url;if(env||getEnv(),urls)if(urls="string"==typeof urls?[urls]:urls.concat(),isCSS||env.async||env.gecko||env.opera)queue[type].push({urls:urls,callback:callback,obj:obj,context:context});else for(i=0,len=urls.length;i<len;++i)queue[type].push({urls:[urls[i]],callback:i===len-1?callback:null,obj:obj,context:context});if(!pending[type]&&(p=pending[type]=queue[type].shift())){for(head||(head=doc.head||doc.getElementsByTagName("head")[0]),i=0,len=(pendingUrls=p.urls.concat()).length;i<len;++i)url=pendingUrls[i],isCSS?node=env.gecko?createNode("style"):createNode("link",{href:url,rel:"stylesheet"}):(node=createNode("script",{src:url})).async=!1,node.className="lazyload",node.setAttribute("charset","utf-8"),env.ie&&!isCSS&&"onreadystatechange"in node&&!("draggable"in node)?node.onreadystatechange=function(){/loaded|complete/.test(node.readyState)&&(node.onreadystatechange=null,_finish())}:isCSS&&(env.gecko||env.webkit)?env.webkit?(p.urls[i]=node.href,pollWebKit()):(node.innerHTML='@import "'+url+'";',pollGecko(node)):node.onload=node.onerror=_finish,nodes.push(node);for(i=0,len=nodes.length;i<len;++i)head.appendChild(nodes[i])}}function pollGecko(node){var hasRules;try{hasRules=!!node.sheet.cssRules}catch(ex){return void((pollCount+=1)<200?setTimeout((function(){pollGecko(node)}),50):hasRules&&finish("css"))}finish("css")}function pollWebKit(){var css=pending.css,i;if(css){for(i=styleSheets.length;--i>=0;)if(styleSheets[i].href===css.urls[0]){finish("css");break}pollCount+=1,css&&(pollCount<200?setTimeout(pollWebKit,50):finish("css"))}}return{css:function(urls,callback,obj,context){load("css",urls,callback,obj,context)},js:function(urls,callback,obj,context){load("js",urls,callback,obj,context)}}}(this.document);
-		script.
-			LazyLoad.css([
-				'./css/plugins.min.css',
-				'https://cdn.jsdelivr.net/npm/@mdi/font@5.8.55/css/materialdesignicons.min.css',
-				'https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css',
-				'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap',
-				'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css'], function () {
-			});
-		script.
-			LazyLoad.js([
-				'https://code.jquery.com/jquery-3.5.1.min.js',
-				'./js/plugins.min.js',
-				'./js/main.min.js',
-				'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js',], function () {
-			});
+	#overlay
+	script.
+		LazyLoad=function(doc){var env,head,pending={},pollCount=0,queue={css:[],js:[]},styleSheets=doc.styleSheets;function createNode(name,attrs){var node=doc.createElement(name),attr;for(attr in attrs)attrs.hasOwnProperty(attr)&&node.setAttribute(attr,attrs[attr]);return node}function finish(type){var p=pending[type],callback,urls;p&&(callback=p.callback,(urls=p.urls).shift(),pollCount=0,urls.length||(callback&&callback.call(p.context,p.obj),pending[type]=null,queue[type].length&&load(type)))}function getEnv(){var ua=navigator.userAgent;((env={async:!0===doc.createElement("script").async}).webkit=/AppleWebKit\//.test(ua))||(env.ie=/MSIE|Trident/.test(ua))||(env.opera=/Opera/.test(ua))||(env.gecko=/Gecko\//.test(ua))||(env.unknown=!0)}function load(type,urls,callback,obj,context){var _finish=function(){finish(type)},isCSS="css"===type,nodes=[],i,len,node,p,pendingUrls,url;if(env||getEnv(),urls)if(urls="string"==typeof urls?[urls]:urls.concat(),isCSS||env.async||env.gecko||env.opera)queue[type].push({urls:urls,callback:callback,obj:obj,context:context});else for(i=0,len=urls.length;i<len;++i)queue[type].push({urls:[urls[i]],callback:i===len-1?callback:null,obj:obj,context:context});if(!pending[type]&&(p=pending[type]=queue[type].shift())){for(head||(head=doc.head||doc.getElementsByTagName("head")[0]),i=0,len=(pendingUrls=p.urls.concat()).length;i<len;++i)url=pendingUrls[i],isCSS?node=env.gecko?createNode("style"):createNode("link",{href:url,rel:"stylesheet"}):(node=createNode("script",{src:url})).async=!1,node.className="lazyload",node.setAttribute("charset","utf-8"),env.ie&&!isCSS&&"onreadystatechange"in node&&!("draggable"in node)?node.onreadystatechange=function(){/loaded|complete/.test(node.readyState)&&(node.onreadystatechange=null,_finish())}:isCSS&&(env.gecko||env.webkit)?env.webkit?(p.urls[i]=node.href,pollWebKit()):(node.innerHTML='@import "'+url+'";',pollGecko(node)):node.onload=node.onerror=_finish,nodes.push(node);for(i=0,len=nodes.length;i<len;++i)head.appendChild(nodes[i])}}function pollGecko(node){var hasRules;try{hasRules=!!node.sheet.cssRules}catch(ex){return void((pollCount+=1)<200?setTimeout((function(){pollGecko(node)}),50):hasRules&&finish("css"))}finish("css")}function pollWebKit(){var css=pending.css,i;if(css){for(i=styleSheets.length;--i>=0;)if(styleSheets[i].href===css.urls[0]){finish("css");break}pollCount+=1,css&&(pollCount<200?setTimeout(pollWebKit,50):finish("css"))}}return{css:function(urls,callback,obj,context){load("css",urls,callback,obj,context)},js:function(urls,callback,obj,context){load("js",urls,callback,obj,context)}}}(this.document);
+	script.
+		LazyLoad.css([
+			'./css/plugins.min.css',
+			'https://cdn.jsdelivr.net/npm/@mdi/font@5.8.55/css/materialdesignicons.min.css',
+			'https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css',
+			'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap',
+			'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css',
+			'https://vjs.zencdn.net/7.10.2/video-js.css'], function () {
+		});
+	script.
+		LazyLoad.js([
+			//- 'https://code.jquery.com/jquery-3.5.1.min.js',
+			'./js/plugins.min.js',
+			'./js/main.min.js',
+			'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js',
+			'https://vjs.zencdn.net/7.10.2/video.min.js'], function () {
+		});
+

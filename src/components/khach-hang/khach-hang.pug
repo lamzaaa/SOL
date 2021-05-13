@@ -1,0 +1,23 @@
+section.kv-section.partner-list
+	.tab-panels.list-tabs
+		.container
+			.catalog-box.d-flex.justify-center.align-center
+				.text.f-18.fw-700.color-white Danh mục
+				em.material-icons expand_more
+			ul.tabs
+				li.item.active(rel='panel-1')
+					span Cao tầng - Thương mại
+				li.item(rel='panel-2')
+					span Công nghiệp
+				li.item(rel='panel-3')
+					span Khách sạn - Khu nghỉ mát
+				li.item(rel='panel-4')
+					span Giáo dục
+				li.item(rel='panel-5')
+					span Đối tác
+			.wrapper-content#panel-1.panel.active
+				.list-partner.d-flex
+					-for(i=1; i<16; i++)
+						.col
+							.item
+								img.lazyload(data-src="./img/khach-hang/i-"+i+".png" alt="")
