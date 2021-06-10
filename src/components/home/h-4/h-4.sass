@@ -29,6 +29,8 @@
 		.panel
 			.single-swiper
 				position: relative
+				@media screen and ( max-width: 576px )
+					padding-bottom: 20px
 				.item-partner
 					cursor: pointer
 					width: 150px
@@ -58,9 +60,10 @@
 						display: none
 				.swiper-pagination
 					width: auto !important
-					bottom: -30px
+					bottom: -40px
 					left: 50%
 					transform: translateX(-50%)
+					margin-bottom: 30px
 					&-bullet
 						width: 15px
 						height: 15px
