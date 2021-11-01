@@ -2,39 +2,21 @@ section.kv-section.recruitment-page
 	.container
 		.main-title.color-main tuyển dụng
 		.recruitment-list
-			.row
-				.col-12.col-md-6.col-lg-6
-					.col-item
-						-for(i=1; i<4; i++)
-							.item-recruit.d-flex
-								.img
-									a(href="tuyen-dung-chi-tiet.html")
-										img.lazyload(data-src="./img/tuyen-dung/i-"+i+".png" alt="")
-								.content.d-flex.justify-between
-									.caption
-										a.title.f-18.fw-700.color-main(href="tuyen-dung-chi-tiet.html") Nhân viên tuyển dụng
-										.time.f-16.fw-300.color-gray 30/03/2021
-										.area.f-16.fw-300.color-gray TP.HCM
-									.icon.d-flex
-										.option.hot Hot
-										.option.new Mới
-										//- .option.deadline Sắp hết hạn
-				.col-12.col-md-6.col-lg-6
-					.col-item
-						-for(i=1; i<4; i++)
-							.item-recruit.d-flex
-								.img
-									a(href="tuyen-dung-chi-tiet.html")
-										img.lazyload(data-src="./img/tuyen-dung/i-"+i+".png" alt="")
-								.content.d-flex.justify-between
-									.caption
-										a.title.f-18.fw-700.color-main(href="tuyen-dung-chi-tiet.html") Nhân viên tuyển dụng
-										.time.f-16.fw-300.color-gray 30/03/2021
-										.area.f-16.fw-300.color-gray TP.HCM
-									.icon.d-flex
-										//- .option.hot Hot
-										//- .option.new Mới
-										.option.deadline Sắp hết hạn
+			.list-wrapper
+				-for(i=1; i<8; i++)
+					.sg-item
+						.item-recruit.d-flex
+							.img
+								a(href="tuyen-dung-chi-tiet.html")
+									img.lazyload(data-src="./img/tuyen-dung/i-"+i+".png" alt="")
+							.content.d-flex.justify-between
+								.caption
+									a.title.f-18.fw-700.color-main(href="tuyen-dung-chi-tiet.html") Nhân viên tuyển dụng
+									.time.f-16.fw-300.color-gray 30/03/2021
+									.area.f-16.fw-300.color-gray TP.HCM
+								.icon.d-flex
+									.option.hot Hot
+									.option.new Mới
 
 			ul.pagination
 				li.active

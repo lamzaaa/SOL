@@ -25,12 +25,12 @@
                                 <xsl:value-of select="Title"></xsl:value-of>
                             </xsl:attribute>
                             <img>
-                                <xsl:attribute name="src">
-                                    <xsl:value-of select="ImageUrl"></xsl:value-of>
-                                </xsl:attribute>
-                                <xsl:attribute name="alt">
-                                    <xsl:value-of select="Title"></xsl:value-of>
-                                </xsl:attribute>
+                            <xsl:attribute name="src">
+                                <xsl:value-of select="ImageUrl"></xsl:value-of>
+                            </xsl:attribute>
+                            <xsl:attribute name="alt">
+                                <xsl:value-of select="Title"></xsl:value-of>
+                            </xsl:attribute>
                             </img>
                         </a>
                     </div>
@@ -61,7 +61,8 @@
                                         <xsl:attribute name="href">
                                             <xsl:text disable-output-escaping="yes">#tab-1</xsl:text>
                                         </xsl:attribute>
-                                        <xsl:value-of disable-output-escaping="yes" select="/ProductList/InforText"></xsl:value-of>
+                                        <xsl:value-of disable-output-escaping="yes" select="/ProductList/InforText">
+                                        </xsl:value-of>
                                     </a>
                                 </li>
                                 <li>
@@ -69,11 +70,13 @@
                                         <xsl:attribute name="href">
                                             <xsl:text disable-output-escaping="yes">#tab-2</xsl:text>
                                         </xsl:attribute>
-                                        <xsl:value-of disable-output-escaping="yes" select="/ProductList/ImageText"></xsl:value-of>
+                                        <xsl:value-of disable-output-escaping="yes" select="/ProductList/ImageText">
+                                        </xsl:value-of>
                                     </a>
                                 </li>
                                 <div class="close">
-                                    <xsl:value-of disable-output-escaping="yes" select="/ProductList/CloseText"></xsl:value-of>
+                                    <xsl:value-of disable-output-escaping="yes" select="/ProductList/CloseText">
+                                    </xsl:value-of>
                                 </div>
                             </ul>
                             <div class="tab-content">
@@ -90,12 +93,14 @@
                                     <div class="slide-detail">
                                         <div class="swiper-container gallery-top">
                                             <div class="swiper-wrapper">
-                                                <xsl:apply-templates select="ProductImages" mode="Top"></xsl:apply-templates>
+                                                <xsl:apply-templates select="ProductImages" mode="Top">
+                                                </xsl:apply-templates>
                                             </div>
                                         </div>
                                         <div class="swiper-container gallery-thumbs">
                                             <div class="swiper-wrapper">
-                                                <xsl:apply-templates select="ProductImages" mode="Thumb"></xsl:apply-templates>
+                                                <xsl:apply-templates select="ProductImages" mode="Thumb">
+                                                </xsl:apply-templates>
                                             </div>
                                         </div>
                                         <!-- <div class="swiper-button-next"></div>
@@ -113,12 +118,12 @@
         <div class="swiper-slide">
             <div class="img">
                 <img class="lazyload">
-                    <xsl:attribute name="data-src">
-                        <xsl:value-of select="ImageUrl"></xsl:value-of>
-                    </xsl:attribute>
-                    <xsl:attribute name="alt">
-                        <xsl:value-of select="Title"></xsl:value-of>
-                    </xsl:attribute>
+                <xsl:attribute name="data-src">
+                    <xsl:value-of select="ImageUrl"></xsl:value-of>
+                </xsl:attribute>
+                <xsl:attribute name="alt">
+                    <xsl:value-of select="Title"></xsl:value-of>
+                </xsl:attribute>
                 </img>
             </div>
         </div>
@@ -127,12 +132,12 @@
         <div class="swiper-slide">
             <div class="img">
                 <img class="lazyload">
-                    <xsl:attribute name="data-src">
-                        <xsl:value-of select="ThumbnailUrl"></xsl:value-of>
-                    </xsl:attribute>
-                    <xsl:attribute name="alt">
-                        <xsl:value-of select="Title"></xsl:value-of>
-                    </xsl:attribute>
+                <xsl:attribute name="data-src">
+                    <xsl:value-of select="ThumbnailUrl"></xsl:value-of>
+                </xsl:attribute>
+                <xsl:attribute name="alt">
+                    <xsl:value-of select="Title"></xsl:value-of>
+                </xsl:attribute>
                 </img>
             </div>
         </div>
